@@ -1,11 +1,11 @@
-# NPTEL Conservation Economics — Quiz & Exam Simulator
+# NPTEL Conservation Geography — Quiz & Exam Simulator
 
 [![Live Production](https://img.shields.io/badge/Live-conservation--economics.jeeva.website-0f766e?style=for-the-badge&logo=vercel)](https://conservation-economics.jeeva.website)
 [![Next.js](https://img.shields.io/badge/Next.js-14.2-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-Strict-blue?style=for-the-badge&logo=typescript)](https://www.typescriptlang.org/)
 [![PWA Ready](https://img.shields.io/badge/PWA-Offline%20Ready-success?style=for-the-badge)](https://web.dev/progressive-web-apps/)
 
-> A zero-backend, zero-database, statically generated quiz and exam preparation platform for **12 weeks of NPTEL Conservation Economics** (120 certified questions).
+> A zero-backend, zero-database, statically generated quiz and exam preparation platform for **13 assignments of NPTEL Conservation Geography** (130 questions).
 
 ---
 

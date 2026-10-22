@@ -20,8 +20,8 @@ const monoFont = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "NPTEL Quiz Platform — Conservation Economics",
-  description: "A zero-database, statically generated quiz and exam preparation app for NPTEL Conservation Economics.",
+  title: "NPTEL Quiz Platform — Conservation Geography",
+  description: "A zero-database, statically generated quiz and exam preparation app for NPTEL Conservation Geography.",
   manifest: "/manifest.json",
   icons: {
     icon: [

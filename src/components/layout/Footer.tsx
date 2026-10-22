@@ -19,7 +19,7 @@ export function Footer() {
               </span>
             </div>
             <p className="text-xs text-ink-muted max-w-md">
-              Self-study and preparation companion for NPTEL Conservation Economics course certification.
+              Self-study and preparation companion for NPTEL Conservation Geography course certification.
             </p>
           </div>
 
@@ -55,7 +55,7 @@ export function Footer() {
         <div className="pt-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-xs text-ink-muted">
           <div className="flex items-center gap-2">
             <BookOpen className="w-3.5 h-3.5 text-data" />
-            <span>Conservation Economics Problem Bank</span>
+            <span>Conservation Geography Problem Bank</span>
           </div>
 
           <div className="flex items-center gap-3 font-mono text-[11px]">

@@ -1,7 +1,7 @@
 {
-  "name": "NPTEL Quiz Platform — Conservation Economics",
+  "name": "NPTEL Quiz Platform — Conservation Geography",
   "short_name": "NPTEL Quiz",
-  "description": "Zero-backend, statically generated quiz and exam preparation app for NPTEL Conservation Economics.",
+  "description": "Zero-backend, statically generated quiz and exam preparation app for NPTEL Conservation Geography.",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",

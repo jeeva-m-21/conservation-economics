@@ -56,7 +56,7 @@ export function Navbar() {
           </div>
           <div className="flex flex-col">
             <span className="text-sm font-semibold leading-tight text-ink">NPTEL Quiz</span>
-            <span className="text-[10px] font-mono text-ink-muted leading-tight">Conservation Economics</span>
+            <span className="text-[10px] font-mono text-ink-muted leading-tight">Conservation Geography</span>
           </div>
         </Link>
 

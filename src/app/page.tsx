@@ -93,11 +93,11 @@ export default function DashboardPage() {
           </div>
 
           <h1 className="text-3xl md:text-4xl font-bold tracking-tight text-ink font-sans">
-            Conservation Economics
+            Conservation Geography
           </h1>
 
           <p className="text-sm text-ink-muted leading-relaxed">
-            Focused self-study console for NPTEL Conservation Economics. Work through weekly problem sets, drill difficult concepts in practice mode, and simulate timed certification exams.
+            Focused self-study console for NPTEL Conservation Geography. Work through weekly problem sets, drill difficult concepts in practice mode, and simulate timed certification exams.
           </p>
         </div>
 

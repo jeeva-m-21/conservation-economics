@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Generate PWA icons (SVG and PNG) for NPTEL Quiz Platform — Conservation Economics.
+Generate PWA icons (SVG and PNG) for NPTEL Quiz Platform — Conservation Geography.
 """
 from PIL import Image, ImageDraw
 import os

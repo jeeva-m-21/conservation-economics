@@ -98,7 +98,7 @@ export default function AnalyticsPage() {
           </div>
           <h1 className="text-2xl font-bold tracking-tight text-ink">Score Analytics & Insights</h1>
           <p className="text-xs text-ink-muted mt-0.5">
-            Diagnostic performance breakdown across all 13 assignments (Weeks 0–12) of NPTEL Conservation Economics.
+            Diagnostic performance breakdown across all 13 assignments (Weeks 0–12) of NPTEL Conservation Geography.
           </p>
         </div>
 
