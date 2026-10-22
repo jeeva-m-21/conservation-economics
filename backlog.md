@@ -127,11 +127,11 @@
 ## Sprint 5: Analytics Dashboard & Learning Retention
 *Objective: Deliver score analysis, week-wise accuracy charts, Leitner spaced repetition, and mistake drill mode.*
 
-- [ ] **SPRINT-5.1: Client Analytics Calculation Engine**
+- [x] **SPRINT-5.1: Client Analytics Calculation Engine**
   - Acceptance Criteria: Pure TS engine in `src/lib/analytics/` calculating: Overall Readiness Score (blended accuracy, recency, coverage), Week-wise accuracy, Topic breakdown, Average response time, and Weak-spot identification.
   - Tests: Unit tests for analytics mathematical edge cases (0 attempts, 100% attempts, mixed weeks).
 
-- [ ] **SPRINT-5.2: Analytics Dashboard Page (`/analytics`)**
+- [x] **SPRINT-5.2: Analytics Dashboard Page (`/analytics`)**
   - Acceptance Criteria: Lazy-loaded charts with Recharts:
     - Week-wise Accuracy Bar Chart with weakest week highlight.
     - Score Trendline over historical attempts.
@@ -139,15 +139,15 @@
     - Weak spots list with "Practice These Now" CTA.
   - Tests/Gates: Lightweight bundle (Recharts loaded dynamically), responsive on mobile.
 
-- [ ] **SPRINT-5.3: Activity & Streak Heatmap**
+- [x] **SPRINT-5.3: Activity & Streak Heatmap**
   - Acceptance Criteria: GitHub-style contribution calendar displaying daily practice activity and streak counter.
   - Tests/Gates: Date binning handles local time zones accurately.
 
-- [ ] **SPRINT-5.4: Spaced Repetition Revision Mode (`/revision`)**
+- [x] **SPRINT-5.4: Spaced Repetition Revision Mode (`/revision`)**
   - Acceptance Criteria: 5-box Leitner system implementation in `src/lib/engine/spaced-repetition.ts`. Correct answers advance to next box; incorrect answers drop to Box 1. Generates daily revision queue.
   - Tests: Unit tests for box promotion/demotion logic.
 
-- [ ] **SPRINT-5.5: Review Mistakes Mode (`/practice?mode=mistakes`)**
+- [x] **SPRINT-5.5: Review Mistakes Mode (`/practice?mode=mistakes`)**
   - Acceptance Criteria: Auto-generated quiz session consisting of questions answered incorrectly in recent attempts, ordered by error frequency.
   - Tests/Gates: Empty state handled gracefully when no mistakes exist.
 
