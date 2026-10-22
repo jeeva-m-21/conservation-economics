@@ -110,15 +110,15 @@
 ## Sprint 4: Result Analysis & Review Engine
 *Objective: Deliver post-quiz score summaries, question-by-question review, and bookmark management.*
 
-- [ ] **SPRINT-4.1: Attempt Results Summary (`/review/[attemptId]`)**
+- [x] **SPRINT-4.1: Attempt Results Summary (`/review/[attemptId]`)**
   - Acceptance Criteria: Score, percentage, pass/mastery badge, time taken, average time per question, correct/incorrect/skipped counters, comparison against prior attempts.
   - Tests/Gates: Calculations match scoring rules.
 
-- [ ] **SPRINT-4.2: Full Question Review Interface**
+- [x] **SPRINT-4.2: Full Question Review Interface**
   - Acceptance Criteria: Filterable review (all, incorrect only, flagged only), showing user's selected choice vs accepted answer, full explanation, and one-click bookmark.
   - Tests/Gates: Clear visual indicators for correct vs incorrect options.
 
-- [ ] **SPRINT-4.3: Bookmarks Page (`/bookmarks`)**
+- [x] **SPRINT-4.3: Bookmarks Page (`/bookmarks`)**
   - Acceptance Criteria: Listing of all user-bookmarked questions across weeks, filterable by week, with option to start a focused practice session on bookmarked questions.
   - Tests/Gates: Bookmark state updates immediately in storage.
 
