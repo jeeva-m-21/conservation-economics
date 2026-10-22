@@ -139,4 +139,9 @@ describe("Storage Layer & Backup Engine", () => {
 
     await expect(importProgress(corruptedPayload, repo)).rejects.toThrow();
   });
+
+  it("rejects oversized backup payloads exceeding 5MB limit", async () => {
+    const hugePayload = "x".repeat(6 * 1024 * 1024);
+    await expect(importProgress(hugePayload, repo)).rejects.toThrow(/exceeds maximum allowed size/i);
+  });
 });

@@ -30,6 +30,15 @@ export async function importProgress(
   jsonString: string,
   repo: ProgressRepository
 ): Promise<{ success: boolean; importedAttempts: number }> {
+  if (!jsonString || typeof jsonString !== "string") {
+    throw new Error("Invalid input: Backup file content must be a non-empty string.");
+  }
+
+  // Defense-in-depth: Reject payloads larger than 5MB to prevent memory exhaustion
+  if (jsonString.length > 5 * 1024 * 1024) {
+    throw new Error("Backup file exceeds maximum allowed size (5MB).");
+  }
+
   let parsedJson: unknown;
   try {
     parsedJson = JSON.parse(jsonString);
