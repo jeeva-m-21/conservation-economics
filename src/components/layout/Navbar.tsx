@@ -15,6 +15,7 @@ import {
   X,
   Compass,
   Github,
+  Globe,
 } from "lucide-react";
 
 const NAV_LINKS = [
@@ -82,6 +83,19 @@ export function Navbar() {
 
         {/* Right cluster */}
         <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
+          {/* Portfolio Link */}
+          <a
+            href="https://www.jeeva.website/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-press hidden lg:inline-flex items-center gap-1.5 px-2.5 py-1.5 text-xs font-mono text-ink-muted hover:text-ink bg-surface border border-border hover:bg-raised rounded-control transition-colors"
+            title="Visit Jeeva's Portfolio (jeeva.website)"
+            aria-label="Jeeva's Portfolio"
+          >
+            <Globe className="w-3.5 h-3.5 text-data" />
+            <span className="text-[11px]">jeeva.website</span>
+          </a>
+
           {/* GitHub Profile Link */}
           <a
             href="https://github.com/jeeva-m-21"
@@ -130,7 +144,20 @@ export function Navbar() {
             );
           })}
 
-          <div className="pt-2 border-t border-rule mt-2">
+          <div className="pt-2 border-t border-rule mt-2 space-y-1.5">
+            <a
+              href="https://www.jeeva.website/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-between px-3 py-2 rounded-control text-xs font-mono text-ink bg-raised border border-border"
+            >
+              <div className="flex items-center gap-2">
+                <Globe className="w-4 h-4 text-data" />
+                <span>Portfolio: jeeva.website</span>
+              </div>
+              <span className="text-data text-[10px]">↗</span>
+            </a>
+
             <a
               href="https://github.com/jeeva-m-21"
               target="_blank"
@@ -138,8 +165,8 @@ export function Navbar() {
               className="flex items-center justify-between px-3 py-2 rounded-control text-xs font-mono text-ink bg-raised border border-border"
             >
               <div className="flex items-center gap-2">
-                <Github className="w-4 h-4" />
-                <span>Developer GitHub: @jeeva-m-21</span>
+                <Github className="w-4 h-4 text-ink" />
+                <span>GitHub: @jeeva-m-21</span>
               </div>
               <span className="text-data text-[10px]">↗</span>
             </a>

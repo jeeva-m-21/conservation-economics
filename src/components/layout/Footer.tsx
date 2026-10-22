@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Github, ExternalLink, BookOpen } from "lucide-react";
+import { Github, ExternalLink, BookOpen, Globe } from "lucide-react";
 
 export function Footer() {
   return (
@@ -23,16 +23,29 @@ export function Footer() {
             </p>
           </div>
 
-          {/* GitHub Developer Profile Callout */}
-          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3">
+          {/* Developer Attribution & Portfolio Callout */}
+          <div className="flex flex-wrap items-center gap-2.5">
+            <a
+              href="https://www.jeeva.website/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-press group inline-flex items-center gap-2 px-3.5 py-2 rounded-control bg-raised hover:bg-raised/80 border border-border text-ink transition-colors text-xs font-medium"
+              title="Visit Jeeva's Portfolio"
+            >
+              <Globe className="w-4 h-4 text-data" />
+              <span>Portfolio: <strong className="font-semibold text-data">jeeva.website</strong></span>
+              <ExternalLink className="w-3 h-3 text-ink-muted group-hover:text-ink transition-colors" />
+            </a>
+
             <a
               href="https://github.com/jeeva-m-21"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-press group inline-flex items-center gap-2 px-3.5 py-2 rounded-control bg-raised hover:bg-raised/80 border border-border text-ink transition-colors text-xs font-medium"
+              className="btn-press group inline-flex items-center gap-2 px-3 py-2 rounded-control bg-surface hover:bg-raised border border-border text-ink transition-colors text-xs font-medium"
+              title="View Jeeva's GitHub Profile"
             >
               <Github className="w-4 h-4 text-ink" />
-              <span>Created by <strong className="font-semibold text-data">Jeeva</strong> (@jeeva-m-21)</span>
+              <span>@jeeva-m-21</span>
               <ExternalLink className="w-3 h-3 text-ink-muted group-hover:text-ink transition-colors" />
             </a>
           </div>
@@ -47,12 +60,21 @@ export function Footer() {
 
           <div className="flex items-center gap-3 font-mono text-[11px]">
             <a
+              href="https://www.jeeva.website/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-ink transition-colors underline underline-offset-2"
+            >
+              jeeva.website
+            </a>
+            <span>·</span>
+            <a
               href="https://github.com/jeeva-m-21"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-ink transition-colors underline underline-offset-2"
             >
-              View Developer Projects
+              GitHub
             </a>
             <span className="hidden md:inline">·</span>
             <kbd className="hidden md:inline-block px-1.5 py-0.5 bg-raised rounded border border-border text-[10px]">
