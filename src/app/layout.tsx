@@ -1,6 +1,8 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
+import { ThemeProvider } from "@/components/theme/ThemeProvider";
+import { Navbar } from "@/components/layout/Navbar";
 
 const sansFont = Inter({
   subsets: ["latin"],
@@ -37,8 +39,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning className={`${sansFont.variable} ${monoFont.variable}`}>
-      <body className="antialiased min-h-[100dvh] flex flex-col">
-        {children}
+      <body className="antialiased min-h-[100dvh] flex flex-col bg-ground text-ink selection:bg-data/20">
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+          <Navbar />
+          <div className="flex-1 flex flex-col">{children}</div>
+        </ThemeProvider>
       </body>
     </html>
   );

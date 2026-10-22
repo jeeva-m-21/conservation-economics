@@ -60,19 +60,19 @@
 ## Sprint 2: UI Design System & App Shell
 *Objective: Establish responsive, accessible layout, dark/light theme switcher, dashboard shell, and settings page.*
 
-- [ ] **SPRINT-2.1: Design Tokens, Theme Provider & Global Layout**
+- [x] **SPRINT-2.1: Design Tokens, Theme Provider & Global Layout**
   - Acceptance Criteria: Theme provider (`next-themes` or custom) supporting light, dark, and system modes. Root layout with responsive header, navigation links, and accessible landmark elements.
   - Tests/Gates: Visual check, no hydration mismatch, strict contrast compliance.
 
-- [ ] **SPRINT-2.2: Reusable UI Component Primitives**
+- [x] **SPRINT-2.2: Reusable UI Component Primitives**
   - Acceptance Criteria: Button, Card, Badge, Progress Bar, Dialog/Modal, Tabs, Dropdown, Tooltip with keyboard accessibility and fluid animations.
   - Tests/Gates: Components render cleanly across screen sizes.
 
-- [ ] **SPRINT-2.3: Landing Page & Dashboard (`/`)**
+- [x] **SPRINT-2.3: Landing Page & Dashboard (`/`)**
   - Acceptance Criteria: Modern dashboard displaying readiness score overview, quick action buttons ("Start Weekly Quiz", "Exam Simulator", "Practice Weak Areas", "Review Mistakes"), and week progress cards (Week 1–12).
   - Tests/Gates: Page renders statically with client-side hydration of local progress.
 
-- [ ] **SPRINT-2.4: Settings Page (`/settings`)**
+- [x] **SPRINT-2.4: Settings Page (`/settings`)**
   - Acceptance Criteria: UI controls for theme switcher, default quiz timer, negative marking toggle, shuffle options toggle, one-click progress export, JSON import with confirmation modal, and reset data with safety prompt.
   - Tests/Gates: Settings persist across browser reload.
 
