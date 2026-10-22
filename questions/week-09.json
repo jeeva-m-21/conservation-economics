@@ -1,0 +1,137 @@
+{
+  "week": 9,
+  "title": "Week 9 : Assignment 9",
+  "due_date": "2026-09-23, 23:59 IST",
+  "questions": [
+    {
+      "id": "w09-q001",
+      "question": "Sex ratio is calculated as:",
+      "options": [
+        "Female population divided by male population multiplied by 1000",
+        "Male population divided by female population multiplied by 1000",
+        "Total population divided by female population multiplied by 1000",
+        "Working population divided by dependent population multiplied by 1000"
+      ],
+      "answer": [
+        0
+      ]
+    },
+    {
+      "id": "w09-q002",
+      "question": "Which of these is commonly observed during humanising of nature?",
+      "options": [
+        "environmental determinism",
+        "possibilism",
+        "neodeterminism",
+        "stop and go determinism"
+      ],
+      "answer": [
+        1
+      ]
+    },
+    {
+      "id": "w09-q003",
+      "question": "The age dependency ratio compares dependent population with:",
+      "options": [
+        "total female population",
+        "working-age population",
+        "urban population",
+        "migrant population"
+      ],
+      "answer": [
+        1
+      ]
+    },
+    {
+      "id": "w09-q004",
+      "question": "The logistic growth equation curve is",
+      "options": [
+        "I-shaped",
+        "J-shaped",
+        "S-shaped",
+        "U-shaped"
+      ],
+      "answer": [
+        2
+      ]
+    },
+    {
+      "id": "w09-q005",
+      "question": "Which of these is a positive check according to Malthus?",
+      "options": [
+        "late marriage",
+        "war",
+        "celibacy",
+        "moral restraint"
+      ],
+      "answer": [
+        1
+      ]
+    },
+    {
+      "id": "w09-q006",
+      "question": "Economic development is often measured in terms of:",
+      "options": [
+        "age dependency ratio",
+        "total land area",
+        "GDP per capita",
+        "sex ratio"
+      ],
+      "answer": [
+        2
+      ]
+    },
+    {
+      "id": "w09-q007",
+      "question": "Which of these is not a pillar of sustainability?",
+      "options": [
+        "environmental sustainability",
+        "economic sustainability",
+        "trans-boundary sustainability",
+        "social sustainability"
+      ],
+      "answer": [
+        2
+      ]
+    },
+    {
+      "id": "w09-q008",
+      "question": "The demographic transition sees a society move from",
+      "options": [
+        "high birth rate, low death rate to low birth rate, high death rate",
+        "low birth rate, high death rate to low birth rate, low death rate",
+        "high birth rate, high death rate to low birth rate, low death rate",
+        "high birth rate, high death rate to low birth rate, high death rate"
+      ],
+      "answer": [
+        2
+      ]
+    },
+    {
+      "id": "w09-q009",
+      "question": "Which of these is a preventive check according to Malthus?",
+      "options": [
+        "foresight",
+        "vice",
+        "misery",
+        "flood"
+      ],
+      "answer": [
+        0
+      ]
+    },
+    {
+      "id": "w09-q010",
+      "question": "Which population group is generally treated as the working population?",
+      "options": [
+        "0-15 years",
+        "15-64 years",
+        "65 years and above",
+        "0-15 and 65 years and above"
+      ],
+      "answer": [
+        1
+      ]
+    }
+  ]
+}

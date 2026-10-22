@@ -1,0 +1,137 @@
+{
+  "week": 6,
+  "title": "Week 6 : Assignment 6",
+  "due_date": "2026-09-02, 23:59 IST",
+  "questions": [
+    {
+      "id": "w06-q001",
+      "question": "The Western Ghats act as a water divide because",
+      "options": [
+        "they prevent all rivers from reaching the sea",
+        "water on opposite sides flows in different directions",
+        "they cause all rivers to become seasonal",
+        "they convert rivers into lakes"
+      ],
+      "answer": [
+        1
+      ]
+    },
+    {
+      "id": "w06-q002",
+      "question": "A river network that follows the structure and slope of the land is best described as",
+      "options": [
+        "discordant",
+        "antecedent",
+        "accordant",
+        "centripetal"
+      ],
+      "answer": [
+        2
+      ]
+    },
+    {
+      "id": "w06-q003",
+      "question": "A tree-like river network in which smaller streams join a main channel is called",
+      "options": [
+        "trellis drainage",
+        "dendritic drainage",
+        "centripetal drainage",
+        "rectangular drainage"
+      ],
+      "answer": [
+        1
+      ]
+    },
+    {
+      "id": "w06-q004",
+      "question": "A river system that does not match the present structure and relief of the landscape is called",
+      "options": [
+        "discordant drainage",
+        "dendritic drainage",
+        "radial drainage",
+        "parallel drainage"
+      ],
+      "answer": [
+        0
+      ]
+    },
+    {
+      "id": "w06-q005",
+      "question": "The Himalayas are primarily comprised of",
+      "options": [
+        "sedimentary rocks",
+        "igneous rocks",
+        "metamorphic rocks",
+        "b and c"
+      ],
+      "answer": [
+        0
+      ]
+    },
+    {
+      "id": "w06-q006",
+      "question": "Which pair of rivers is described as flowing westwards into the Arabian Sea?",
+      "options": [
+        "Ganga and Yamuna",
+        "Mahanadi and Godavari",
+        "Narmada and Tapi",
+        "Krishna and Kaveri"
+      ],
+      "answer": [
+        2
+      ]
+    },
+    {
+      "id": "w06-q007",
+      "question": "Which of these are factors determining the climate of India?",
+      "options": [
+        "distance from the sea",
+        "altitude",
+        "relief",
+        "all of these"
+      ],
+      "answer": [
+        3
+      ]
+    },
+    {
+      "id": "w06-q008",
+      "question": "Peninsular rivers usually have fixed courses mainly because",
+      "options": [
+        "they flow through newly formed mountains",
+        "they carry very high sediment loads",
+        "they are controlled only by monsoon winds",
+        "their courses are cut into older, harder rocks"
+      ],
+      "answer": [
+        3
+      ]
+    },
+    {
+      "id": "w06-q009",
+      "question": "In Koeppen classification, which is polar frost temperature?",
+      "options": [
+        "C",
+        "D",
+        "F",
+        "T"
+      ],
+      "answer": [
+        2
+      ]
+    },
+    {
+      "id": "w06-q010",
+      "question": "Which of these are factors determining the climate of India?",
+      "options": [
+        "the latitudinal extent",
+        "the Himalayas forming a climatic divide",
+        "distribution of land and water",
+        "all of these"
+      ],
+      "answer": [
+        3
+      ]
+    }
+  ]
+}

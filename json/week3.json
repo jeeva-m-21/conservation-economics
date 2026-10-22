@@ -1,0 +1,137 @@
+{
+  "week": 3,
+  "title": "Week 3 : Assignment 3",
+  "due_date": "2026-08-12, 23:59 IST",
+  "questions": [
+    {
+      "id": "w03-q001",
+      "question": "Mudrock is an example of",
+      "options": [
+        "siliciclastic rock",
+        "carbonate rock",
+        "evaporite rock",
+        "phosphatic rock"
+      ],
+      "answer": [
+        0
+      ]
+    },
+    {
+      "id": "w03-q002",
+      "question": "Carbonation is an example of",
+      "options": [
+        "chemical weathering",
+        "physical weathering",
+        "biological weathering",
+        "none of the above"
+      ],
+      "answer": [
+        0
+      ]
+    },
+    {
+      "id": "w03-q003",
+      "question": "“green or black coloured inosilicate minerals forming prism or needle-like crystals” is a description of",
+      "options": [
+        "amphiboles",
+        "feldspar",
+        "mica",
+        "pyroxene"
+      ],
+      "answer": [
+        0
+      ]
+    },
+    {
+      "id": "w03-q004",
+      "question": "Hydrolysis is an example of",
+      "options": [
+        "chemical weathering",
+        "physical weathering",
+        "biological weathering",
+        "none of the above"
+      ],
+      "answer": [
+        0
+      ]
+    },
+    {
+      "id": "w03-q005",
+      "question": "Which of these is an example of exogenic process?",
+      "options": [
+        "volcanism",
+        "earthquake",
+        "plate tectonics",
+        "deposition"
+      ],
+      "answer": [
+        3
+      ]
+    },
+    {
+      "id": "w03-q006",
+      "question": "Which statement best explains why streak is often more useful than surface colour for mineral identification?",
+      "options": [
+        "Streak measures the density of the mineral",
+        "Surface colour never changes in minerals",
+        "Streak shows the colour of the powdered mineral and may reduce the effect of minor impurities",
+        "Streak reveals the age of the mineral"
+      ],
+      "answer": [
+        2
+      ]
+    },
+    {
+      "id": "w03-q007",
+      "question": "Which factor is listed as an independent control over landform development?",
+      "options": [
+        "Mineral streak",
+        "Crystal habit",
+        "Knife-blade hardness",
+        "Stability of sea level"
+      ],
+      "answer": [
+        3
+      ]
+    },
+    {
+      "id": "w03-q008",
+      "question": "Sandstone is an example of",
+      "options": [
+        "siliciclastic rock",
+        "carbonate rock",
+        "evaporite rock",
+        "phosphatic rock"
+      ],
+      "answer": [
+        0
+      ]
+    },
+    {
+      "id": "w03-q009",
+      "question": "“tendency to break in given directions producing relatively plane surfaces” is known as",
+      "options": [
+        "cleavage",
+        "fracture",
+        "lustre",
+        "streak"
+      ],
+      "answer": [
+        0
+      ]
+    },
+    {
+      "id": "w03-q010",
+      "question": "Slow cooling of magma results in",
+      "options": [
+        "smooth grained sedimentary rocks",
+        "coarse grained sedimentary rocks",
+        "smooth grained igneous rocks",
+        "coarse grained igneous rocks"
+      ],
+      "answer": [
+        3
+      ]
+    }
+  ]
+}

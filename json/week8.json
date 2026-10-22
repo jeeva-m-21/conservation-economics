@@ -1,0 +1,137 @@
+{
+  "week": 8,
+  "title": "Week 8 : Assignment 8",
+  "due_date": "2026-09-16, 23:59 IST",
+  "questions": [
+    {
+      "id": "w08-q001",
+      "question": "Which of the following is listed as an ex-situ conservation method?",
+      "options": [
+        "Wildlife sanctuary",
+        "National park",
+        "Seed bank",
+        "Biosphere reserve"
+      ],
+      "answer": [
+        2
+      ]
+    },
+    {
+      "id": "w08-q002",
+      "question": "Which factor makes smaller populations especially vulnerable due to mating among close relatives?",
+      "options": [
+        "Habitat displacement",
+        "Eutrophication",
+        "Inbreeding depression",
+        "Carbon storage"
+      ],
+      "answer": [
+        2
+      ]
+    },
+    {
+      "id": "w08-q003",
+      "question": "Which type of species plays a much greater ecological role than expected from its abundance?",
+      "options": [
+        "Umbrella species",
+        "Flagship species",
+        "Least concern species",
+        "Keystone species"
+      ],
+      "answer": [
+        3
+      ]
+    },
+    {
+      "id": "w08-q004",
+      "question": "A species found only in a single lake is rare mainly because of",
+      "options": [
+        "high birth rate",
+        "limited geographical range",
+        "high adaptability",
+        "large home range"
+      ],
+      "answer": [
+        1
+      ]
+    },
+    {
+      "id": "w08-q005",
+      "question": "Which of the following is a disadvantage of ex-situ conservation?",
+      "options": [
+        "It always protects the natural habitat of the species",
+        "Captive-bred individuals may find reintroduction difficult",
+        "It prevents all inbreeding risks automatically",
+        "It can be planned for all species at the same time"
+      ],
+      "answer": [
+        1
+      ]
+    },
+    {
+      "id": "w08-q006",
+      "question": "In the species-area relationship, what does “S” represent?",
+      "options": [
+        "Size of the habitat",
+        "Species richness",
+        "Survival rate",
+        "Stochastic pressure"
+      ],
+      "answer": [
+        1
+      ]
+    },
+    {
+      "id": "w08-q007",
+      "question": "In the Clear Lake example, DDD concentration increased from water to plankton, fish, and piscivorous birds. This illustrates",
+      "options": [
+        "ecological redundancy",
+        "habitat selection",
+        "biomagnification",
+        "ex-situ management"
+      ],
+      "answer": [
+        2
+      ]
+    },
+    {
+      "id": "w08-q008",
+      "question": "We prefer those areas for the creation of a conservation reserve where the level of threat is",
+      "options": [
+        "very high",
+        "medium",
+        "very low",
+        "non-existent"
+      ],
+      "answer": [
+        1
+      ]
+    },
+    {
+      "id": "w08-q009",
+      "question": "The acronym HIPPO does not include",
+      "options": [
+        "habitat loss",
+        "invasive species",
+        "pollination",
+        "pollution"
+      ],
+      "answer": [
+        2
+      ]
+    },
+    {
+      "id": "w08-q010",
+      "question": "The elephant has a home range of several square kilometres, regulates the ecosystem by its habit of destructive feeding, and people can relate to this animal which is important for conservation. Given this background, the elephant can be called as",
+      "options": [
+        "umbrella species",
+        "keystone species",
+        "flagship species",
+        "all of the above"
+      ],
+      "answer": [
+        3
+      ]
+    }
+  ]
+}
