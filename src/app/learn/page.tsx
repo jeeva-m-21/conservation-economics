@@ -109,7 +109,7 @@ function LearnContent() {
   const progressPercent = Math.round(((currentIndex + 1) / quizData.questions.length) * 100);
 
   return (
-    <main className="max-w-4xl mx-auto w-full px-4 py-8">
+    <main className="max-w-4xl mx-auto w-full px-4 py-8 page-enter">
       {/* Header with week picker */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-border pb-6 mb-6">
         <div>

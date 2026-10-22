@@ -79,7 +79,7 @@ export default function DashboardPage() {
   const bookmarkedCount = Object.values(questionStats).filter((s) => s.bookmarked).length;
 
   return (
-    <div className="max-w-6xl mx-auto w-full px-4 py-8 md:py-10 space-y-10">
+    <div className="max-w-6xl mx-auto w-full px-4 py-8 md:py-10 space-y-10 page-enter">
       {/* Executive SaaS Hero Header */}
       <header className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 pb-6 border-b border-border">
         <div className="space-y-2 max-w-2xl">
@@ -105,16 +105,16 @@ export default function DashboardPage() {
             <Button
               variant="primary"
               size="md"
-              className="bg-data text-white hover:bg-data/90 shadow-sm"
+              className="bg-data text-data-contrast font-semibold hover:bg-data/90 shadow-sm"
             >
               <Play className="w-3.5 h-3.5 fill-current" />
               <span>Exam Simulator</span>
             </Button>
           </Link>
-          <Link href="/revision">
+          <Link href="/practice">
             <Button variant="outline" size="md">
-              <Repeat className="w-3.5 h-3.5" />
-              <span>Spaced Revision</span>
+              <Compass className="w-3.5 h-3.5" />
+              <span>Practice Mode</span>
             </Button>
           </Link>
         </div>
@@ -280,7 +280,7 @@ export default function DashboardPage() {
             return (
               <div
                 key={week.week}
-                className="group p-5 rounded-card bg-surface border border-border hover:border-ink-muted/50 transition-colors flex flex-col justify-between shadow-xs"
+                className="card-hover group p-5 rounded-card bg-surface border border-border hover:border-ink-muted/50 transition-colors flex flex-col justify-between shadow-xs"
               >
                 <div>
                   <div className="flex items-center justify-between gap-2 mb-2.5">
@@ -329,7 +329,7 @@ export default function DashboardPage() {
                     <Button
                       variant="primary"
                       size="sm"
-                      className="w-full text-xs bg-raised hover:bg-raised/80 text-ink border border-border group-hover:border-data/40 group-hover:bg-data group-hover:text-white transition-colors"
+                      className="w-full text-xs bg-raised hover:bg-raised/80 text-ink border border-border group-hover:border-data/40 group-hover:bg-data group-hover:text-data-contrast font-semibold transition-colors"
                     >
                       <Play className="w-3 h-3 fill-current" />
                       <span>Quiz</span>

@@ -180,7 +180,7 @@ export default function WeeklyQuizPage({
       />
 
       {/* Main Workspace */}
-      <div className="flex-1 max-w-6xl mx-auto w-full px-4 py-6 flex flex-col md:flex-row gap-6">
+      <div className="flex-1 max-w-6xl mx-auto w-full px-4 py-6 flex flex-col md:flex-row gap-6 page-enter">
         {/* Left: Active Question Card & Controls */}
         <div className="flex-1 flex flex-col justify-between">
           <div>
@@ -223,7 +223,7 @@ export default function WeeklyQuizPage({
                   variant="primary"
                   size="md"
                   onClick={() => setShowSubmitModal(true)}
-                  className="bg-data text-white hover:bg-data/90"
+                  className="bg-data text-data-contrast font-semibold hover:bg-data/90"
                 >
                   <Send className="w-3.5 h-3.5" />
                   <span>Submit Quiz</span>
@@ -251,7 +251,7 @@ export default function WeeklyQuizPage({
               <Button
                 variant="primary"
                 size="md"
-                className="w-full bg-data text-white hover:bg-data/90"
+                className="w-full bg-data text-data-contrast font-semibold hover:bg-data/90"
                 onClick={() => setShowSubmitModal(true)}
               >
                 <Send className="w-3.5 h-3.5" />
@@ -307,7 +307,7 @@ export default function WeeklyQuizPage({
               variant="primary"
               size="sm"
               onClick={handleSubmitQuiz}
-              className="bg-data text-white hover:bg-data/90"
+              className="bg-data text-data-contrast font-semibold hover:bg-data/90"
             >
               Submit Now
             </Button>

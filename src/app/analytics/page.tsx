@@ -88,7 +88,7 @@ export default function AnalyticsPage() {
       : null;
 
   return (
-    <main className="max-w-6xl mx-auto w-full px-4 py-8">
+    <main className="max-w-6xl mx-auto w-full px-4 py-8 page-enter">
       {/* Top Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-border pb-6 mb-8">
         <div>
@@ -165,6 +165,8 @@ export default function AnalyticsPage() {
                 <YAxis domain={[0, 100]} tick={{ fontSize: 11, fill: "var(--text-muted)" }} axisLine={false} tickLine={false} />
                 <Tooltip
                   formatter={(val: number) => [`${val}%`, "Accuracy"]}
+                  itemStyle={{ color: "var(--text-ink)" }}
+                  labelStyle={{ color: "var(--text-muted)", fontWeight: 600 }}
                   contentStyle={{
                     backgroundColor: "var(--surface)",
                     borderColor: "var(--border)",
@@ -202,6 +204,8 @@ export default function AnalyticsPage() {
                   <YAxis domain={[0, 100]} tick={{ fontSize: 11, fill: "var(--text-muted)" }} axisLine={false} tickLine={false} />
                   <Tooltip
                     formatter={(val: number) => [`${val}%`, "Score"]}
+                    itemStyle={{ color: "var(--text-ink)" }}
+                    labelStyle={{ color: "var(--text-muted)", fontWeight: 600 }}
                     contentStyle={{
                       backgroundColor: "var(--surface)",
                       borderColor: "var(--border)",

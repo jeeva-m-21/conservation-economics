@@ -16,25 +16,21 @@ export function ThemeToggle() {
     return <div className="w-8 h-8 rounded-control bg-surface border border-border" />;
   }
 
-  const cycleTheme = () => {
-    if (theme === "system") setTheme("dark");
-    else if (theme === "dark") setTheme("light");
-    else setTheme("system");
+  const toggleTheme = () => {
+    setTheme(theme === "dark" ? "light" : "dark");
   };
 
   return (
     <button
-      onClick={cycleTheme}
+      onClick={toggleTheme}
       className="btn-press flex items-center justify-center w-8 h-8 rounded-control bg-surface border border-border hover:border-ink-muted text-ink transition-colors"
-      title={`Current theme: ${theme}. Click to switch.`}
+      title={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
       aria-label="Toggle theme"
     >
       {theme === "dark" ? (
-        <Moon className="w-4 h-4 text-data" />
-      ) : theme === "light" ? (
-        <Sun className="w-4 h-4 text-status-flag" />
+        <Sun className="w-4 h-4 text-status-flag transition-transform duration-200 rotate-0 hover:rotate-45" />
       ) : (
-        <Monitor className="w-4 h-4 text-ink-muted" />
+        <Moon className="w-4 h-4 text-ink-muted hover:text-ink transition-transform duration-200" />
       )}
     </button>
   );

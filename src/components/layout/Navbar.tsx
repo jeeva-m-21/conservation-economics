@@ -20,7 +20,6 @@ import {
 const NAV_LINKS = [
   { href: "/", label: "Dashboard", icon: LayoutDashboard },
   { href: "/practice", label: "Practice", icon: Compass },
-  { href: "/revision", label: "Revision", icon: Repeat },
   { href: "/analytics", label: "Analytics", icon: BarChart3 },
   { href: "/bookmarks", label: "Bookmarks", icon: Bookmark },
   { href: "/settings", label: "Settings", icon: Settings },

@@ -294,10 +294,10 @@ export default function ReviewPage({
 
                     if (isAcceptedAnswer) {
                       optStyle = "border-status-correct/60 bg-status-correct-bg/70 text-ink";
-                      badgeStyle = "bg-status-correct text-white border-transparent";
+                      badgeStyle = "bg-status-correct text-status-correct-contrast font-semibold border-transparent";
                     } else if (wasSelectedByUser && !isAcceptedAnswer) {
                       optStyle = "border-status-wrong/60 bg-status-wrong-bg/70 text-ink";
-                      badgeStyle = "bg-status-wrong text-white border-transparent";
+                      badgeStyle = "bg-status-wrong text-status-wrong-contrast font-semibold border-transparent";
                     }
 
                     return (

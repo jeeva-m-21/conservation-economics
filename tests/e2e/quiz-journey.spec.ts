@@ -66,7 +66,7 @@ test.describe("NPTEL Quiz Platform End-to-End Journeys", () => {
     await option.click();
 
     // In learn mode, feedback card appears immediately
-    await expect(page.locator("text=Correct!").or(page.locator("text=Incorrect"))).toBeVisible();
+    await expect(page.locator("text=Correct Solution").or(page.locator("text=Incorrect Selection"))).toBeVisible();
   });
 
   test("3. Final Exam Simulator: start, answer, and exit confirmation", async ({

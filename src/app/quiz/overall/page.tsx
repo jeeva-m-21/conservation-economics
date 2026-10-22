@@ -165,12 +165,13 @@ export default function OverallExamPage() {
   // Pre-Exam Setup Screen
   if (!isStarted || !session) {
     return (
-      <main className="max-w-2xl mx-auto w-full px-4 py-10">
+      <main className="max-w-2xl mx-auto w-full px-4 py-10 page-enter">
         <div className="text-center mb-8">
-          <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-data-subtle text-data border border-data/20 mb-3">
-            <Award className="w-6 h-6" />
+          <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-control bg-raised border border-border text-[11px] font-mono text-ink-muted mb-3">
+            <span className="w-1.5 h-1.5 rounded-full bg-data animate-pulse" />
+            <span>NPTEL Certification Mock</span>
           </div>
-          <h1 className="text-2xl font-bold tracking-tight text-ink">
+          <h1 className="text-2xl md:text-3xl font-bold tracking-tight text-ink font-sans">
             Final Exam Simulator
           </h1>
           <p className="text-xs md:text-sm text-ink-muted mt-1 max-w-md mx-auto">
@@ -197,7 +198,7 @@ export default function OverallExamPage() {
                     onClick={() => setQuestionCount(count)}
                     className={`btn-press py-2 rounded-control border text-xs font-mono tabular font-semibold transition-colors ${
                       questionCount === count
-                        ? "bg-data text-white border-transparent"
+                        ? "bg-data text-data-contrast font-semibold border-transparent"
                         : "bg-surface border-border text-ink hover:bg-raised"
                     }`}
                   >
@@ -224,7 +225,7 @@ export default function OverallExamPage() {
                     onClick={() => setTimerMinutes(item.val)}
                     className={`btn-press py-2 rounded-control border text-xs font-mono tabular font-semibold transition-colors ${
                       timerMinutes === item.val
-                        ? "bg-data text-white border-transparent"
+                        ? "bg-data text-data-contrast font-semibold border-transparent"
                         : "bg-surface border-border text-ink hover:bg-raised"
                     }`}
                   >
@@ -300,7 +301,7 @@ export default function OverallExamPage() {
             <Button
               variant="primary"
               size="lg"
-              className="w-full mt-4 bg-data text-white hover:bg-data/90"
+              className="w-full mt-4 bg-data text-data-contrast font-semibold hover:bg-data/90"
               onClick={handleStartExam}
             >
               <Play className="w-4 h-4 fill-current" />
@@ -330,7 +331,7 @@ export default function OverallExamPage() {
         onToggleNavigator={() => setShowMobileNav(!showMobileNav)}
       />
 
-      <div className="flex-1 max-w-6xl mx-auto w-full px-4 py-6 flex flex-col md:flex-row gap-6">
+      <div className="flex-1 max-w-6xl mx-auto w-full px-4 py-6 flex flex-col md:flex-row gap-6 page-enter">
         <div className="flex-1 flex flex-col justify-between">
           <QuestionCard
             question={currentQ}
@@ -369,7 +370,7 @@ export default function OverallExamPage() {
                   variant="primary"
                   size="md"
                   onClick={() => setShowSubmitModal(true)}
-                  className="bg-data text-white hover:bg-data/90"
+                  className="bg-data text-data-contrast font-semibold hover:bg-data/90"
                 >
                   <Send className="w-3.5 h-3.5" />
                   <span>Submit Exam</span>
@@ -396,7 +397,7 @@ export default function OverallExamPage() {
               <Button
                 variant="primary"
                 size="md"
-                className="w-full bg-data text-white hover:bg-data/90"
+                className="w-full bg-data text-data-contrast font-semibold hover:bg-data/90"
                 onClick={() => setShowSubmitModal(true)}
               >
                 <Send className="w-3.5 h-3.5" />
@@ -446,7 +447,7 @@ export default function OverallExamPage() {
               variant="primary"
               size="sm"
               onClick={handleSubmitExam}
-              className="bg-data text-white hover:bg-data/90"
+              className="bg-data text-data-contrast font-semibold hover:bg-data/90"
             >
               Submit Now
             </Button>

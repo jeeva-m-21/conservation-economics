@@ -144,7 +144,7 @@ function PracticeContent() {
                     setIsPracticing(false);
                     resetSession();
                   }}
-                  className="bg-data text-white"
+                  className="bg-data text-data-contrast font-semibold hover:bg-data/90"
                 >
                   <RotateCcw className="w-3.5 h-3.5" />
                   <span>Done Practicing</span>
@@ -249,7 +249,7 @@ function PracticeContent() {
           <Button
             variant="primary"
             size="lg"
-            className="w-full bg-data text-white hover:bg-data/90"
+            className="w-full bg-data text-data-contrast font-semibold hover:bg-data/90"
             onClick={handleStartPractice}
             disabled={eligibleQuestions.length === 0}
           >

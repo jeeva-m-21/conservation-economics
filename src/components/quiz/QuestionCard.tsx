@@ -147,16 +147,16 @@ export function QuestionCard({
               optionStyle =
                 "border-status-correct/60 bg-status-correct-bg text-ink";
               keyBadgeStyle =
-                "bg-status-correct text-white border-transparent";
+                "bg-status-correct text-status-correct-contrast font-semibold border-transparent";
             } else if (isSelected && !isAcceptedCorrect) {
               optionStyle =
                 "border-status-wrong/60 bg-status-wrong-bg text-ink";
               keyBadgeStyle =
-                "bg-status-wrong text-white border-transparent";
+                "bg-status-wrong text-status-wrong-contrast font-semibold border-transparent";
             }
           } else if (isSelected) {
             optionStyle = "border-data bg-data-subtle text-ink shadow-sm";
-            keyBadgeStyle = "bg-data text-white border-transparent";
+            keyBadgeStyle = "bg-data text-data-contrast font-semibold border-transparent";
           }
 
           return (

@@ -79,7 +79,7 @@ export default function SettingsPage() {
   const handleConfirmReset = async () => {
     await clearAll();
     await updateSettings({
-      theme: "system",
+      theme: "light",
       negativeMarking: false,
       shuffleOptions: true,
     });

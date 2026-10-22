@@ -43,7 +43,7 @@ export const QuestionStatRecordSchema = z.object({
 export type QuestionStatRecord = z.infer<typeof QuestionStatRecordSchema>;
 
 export const SettingsSchema = z.object({
-  theme: z.enum(["light", "dark", "system"]).default("system"),
+  theme: z.enum(["light", "dark", "system"]).default("light"),
   defaultTimerMin: z.number().int().positive().optional(),
   negativeMarking: z.boolean().default(false),
   shuffleOptions: z.boolean().default(true),

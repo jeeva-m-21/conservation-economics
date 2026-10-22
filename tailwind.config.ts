@@ -17,6 +17,7 @@ const config: Config = {
         rule: "var(--rule)",
         ink: {
           DEFAULT: "var(--text-ink)",
+          secondary: "var(--text-secondary)",
           muted: "var(--text-muted)",
           tertiary: "var(--text-tertiary)",
         },
@@ -24,14 +25,18 @@ const config: Config = {
           DEFAULT: "var(--data-hue)",
           subtle: "var(--data-hue-subtle)",
           ink: "var(--data-hue-ink)",
+          contrast: "var(--data-contrast)",
         },
         status: {
           correct: "var(--status-correct)",
           "correct-bg": "var(--status-correct-bg)",
+          "correct-contrast": "var(--status-correct-contrast)",
           wrong: "var(--status-wrong)",
           "wrong-bg": "var(--status-wrong-bg)",
+          "wrong-contrast": "var(--status-wrong-contrast)",
           flag: "var(--status-flag)",
           "flag-bg": "var(--status-flag-bg)",
+          "flag-contrast": "var(--status-flag-contrast)",
         },
       },
       transitionTimingFunction: {
