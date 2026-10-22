@@ -164,7 +164,7 @@
   - Acceptance Criteria: PWA manifest (`manifest.json`), service worker precaching static application shell and question JSON files. Offline indicator banner when disconnected.
   - Tests/Gates: App loads and runs quizzes when offline in Chrome DevTools network throttle (offline).
 
-- [ ] **SPRINT-6.3: Playwright E2E Test Suite**
+- [x] **SPRINT-6.3: Playwright E2E Test Suite**
   - Acceptance Criteria: Automated end-to-end journeys covering:
     1. Complete weekly quiz -> verify result page and storage save.
     2. Start overall quiz -> navigate, answer questions -> submit.

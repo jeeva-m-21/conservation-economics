@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, use } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import confetti from "canvas-confetti";
 import { defaultRepository } from "@/lib/storage/repository";
@@ -27,10 +27,9 @@ import {
 export default function ReviewPage({
   params,
 }: {
-  params: Promise<{ attemptId: string }>;
+  params: { attemptId: string };
 }) {
-  const resolvedParams = use(params);
-  const attemptId = resolvedParams.attemptId;
+  const attemptId = params.attemptId;
 
   const [attempt, setAttempt] = useState<AttemptRecord | null>(null);
   const [questionsMap, setQuestionsMap] = useState<Record<string, Question>>({});

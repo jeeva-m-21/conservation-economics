@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, use } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { getWeekQuiz } from "@/lib/questions";
 import { WeekQuiz } from "@/lib/schema/question";
@@ -26,10 +26,9 @@ import {
 export default function WeeklyQuizPage({
   params,
 }: {
-  params: Promise<{ week: string }>;
+  params: { week: string };
 }) {
-  const resolvedParams = use(params);
-  const weekNum = parseInt(resolvedParams.week, 10);
+  const weekNum = parseInt(params.week, 10);
   const router = useRouter();
 
   const [quizData, setQuizData] = useState<WeekQuiz | null>(null);
