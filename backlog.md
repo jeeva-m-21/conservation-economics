@@ -36,23 +36,23 @@
 ## Sprint 1: Core Engine & Storage Foundation
 *Objective: Build pure TypeScript quiz session engine, scoring algorithms, storage abstraction with IndexedDB, and state stores.*
 
-- [ ] **SPRINT-1.1: Pure TS Quiz Engine (Session Creation & Shuffling)**
+- [x] **SPRINT-1.1: Pure TS Quiz Engine (Session Creation & Shuffling)**
   - Acceptance Criteria: `src/lib/engine/quiz.ts` implementing `buildQuiz(config, questionBank, history)`. Deterministic seeded PRNG (mulberry32) for question/option shuffle, tracking original option indices for consistent analytics.
   - Tests: Failing tests written first for seed reproducibility, option remapping, and sampling strategies (`even`, `proportional`, `weak-weighted`).
 
-- [ ] **SPRINT-1.2: Session Answering, Timers & Scoring Logic**
+- [x] **SPRINT-1.2: Session Answering, Timers & Scoring Logic**
   - Acceptance Criteria: Pure functions `answerQuestion(session, qid, selected)` and `scoreSession(session, scoringRules)`. Supports positive marks, optional negative marking, unanswered handling, and accurate duration math.
   - Tests: Comprehensive unit tests covering negative marking edge cases, multi-select, and partial scoring if applicable.
 
-- [ ] **SPRINT-1.3: Storage Layer Abstraction (`ProgressRepository`)**
+- [x] **SPRINT-1.3: Storage Layer Abstraction (`ProgressRepository`)**
   - Acceptance Criteria: Interface `ProgressRepository` in `src/lib/storage/repository.ts`. Implementation using IndexedDB (via `idb-keyval`) for `attempts` and `questionStats`, and `localStorage` for lightweight `Settings`. In-memory fallback if IndexedDB is blocked.
   - Tests: Unit tests for repository methods (saveAttempt, getAttempts, getStats, updateStats).
 
-- [ ] **SPRINT-1.4: Progress Export / Import Engine**
+- [x] **SPRINT-1.4: Progress Export / Import Engine**
   - Acceptance Criteria: Functions `exportProgress()` and `importProgress(fileContent)` in `src/lib/storage/backup.ts`. Validated with Zod schema (`nptel-progress.json`). Rejects corrupted or malicious payloads gracefully.
   - Tests: Unit tests for export formatting and invalid payload rejection.
 
-- [ ] **SPRINT-1.5: Zustand Client Stores**
+- [x] **SPRINT-1.5: Zustand Client Stores**
   - Acceptance Criteria: Zustand stores (`useQuizStore`, `useSettingsStore`, `useProgressStore`) wiring the engine and storage layer with reactive state for the UI.
 
 ---
