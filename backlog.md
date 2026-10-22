@@ -172,6 +172,6 @@
     4. Export progress -> verify downloaded JSON -> import progress on clean profile.
   - Native Checks: `npx playwright test` passes in CI.
 
-- [ ] **SPRINT-6.4: Performance Optimization & Vercel Production Build**
+- [x] **SPRINT-6.4: Performance Optimization & Vercel Production Build**
   - Acceptance Criteria: Lighthouse score 95+ on Performance, Accessibility, Best Practices, and SEO. Zero TypeScript or ESLint warnings.
   - Native Checks: `npm run build` succeeds with zero errors.

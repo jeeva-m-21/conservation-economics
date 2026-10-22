@@ -13,6 +13,8 @@ dist/
 coverage/
 .coverage
 .pytest_cache/
+test-results/
+playwright-report/
 
 # Environment & secrets
 .env
