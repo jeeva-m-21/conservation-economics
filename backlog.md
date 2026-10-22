@@ -81,27 +81,27 @@
 ## Sprint 3: Quiz Execution Flow & Modes
 *Objective: Implement the full interactive quiz runner for Learn, Weekly Assignment, and Overall Exam modes.*
 
-- [ ] **SPRINT-3.1: Question Card Component**
+- [x] **SPRINT-3.1: Question Card Component**
   - Acceptance Criteria: Displays question text, options with single/multi-choice selection, clear selected state, flag/bookmark toggle, keyboard shortcut listeners (`1`-`4` for options, `F` for flag).
   - Tests/Gates: Keyboard navigation works cleanly without focus trapping.
 
-- [ ] **SPRINT-3.2: Quiz Navigator & Progress Bar**
+- [x] **SPRINT-3.2: Quiz Navigator & Progress Bar**
   - Acceptance Criteria: Side panel / collapsible drawer displaying all question numbers with color codes: answered, unanswered, flagged, current. One-click jump to any question.
   - Tests/Gates: Smooth navigation and state synchronization.
 
-- [ ] **SPRINT-3.3: Resilient Quiz Timer**
+- [x] **SPRINT-3.3: Resilient Quiz Timer**
   - Acceptance Criteria: Timestamp-based timer (`startedAt`, `targetEndAt`) that remains accurate even across browser tab sleep, minimize, or page refresh. Warning state when under 2 minutes remaining.
   - Tests: Unit tests for timestamp delta calculations.
 
-- [ ] **SPRINT-3.4: Weekly Quiz Mode (`/quiz/weekly/[week]`)**
+- [x] **SPRINT-3.4: Weekly Quiz Mode (`/quiz/weekly/[week]`)**
   - Acceptance Criteria: Setup modal (timer toggle, shuffle options), quiz execution flow with autosave after every answer, confirmation modal on submit, answers hidden until completion.
   - Tests/Gates: Reloading tab restores exact session progress.
 
-- [ ] **SPRINT-3.5: Learn Mode (`/learn`)**
+- [x] **SPRINT-3.5: Learn Mode (`/learn`)**
   - Acceptance Criteria: Immediate feedback on option selection (green for correct, red for incorrect), explanation display, no timer pressure, next/previous question controls.
   - Tests/Gates: Instant visual feedback, no progress degradation.
 
-- [ ] **SPRINT-3.6: Overall Quiz / Exam Simulator (`/quiz/overall`)**
+- [x] **SPRINT-3.6: Overall Quiz / Exam Simulator (`/quiz/overall`)**
   - Acceptance Criteria: Configurable final exam simulation: questions sampled across all 12 weeks, customizable question count (e.g., 50 or 100), sampling strategy (`even`, `proportional`, `weak-weighted`), timed exam conditions.
   - Tests/Gates: Verification of question sampling across all weeks.
 
