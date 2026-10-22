@@ -160,7 +160,7 @@
   - Acceptance Criteria: Full keyboard navigation (`1-4` options, `Enter` next/submit, `F` bookmark, `←/→` navigation), screen reader aria-labels, focus indicators, color contrast AA compliance.
   - Tests/Gates: Automated axe-core / a11y checks pass.
 
-- [ ] **SPRINT-6.2: Offline PWA & Service Worker**
+- [x] **SPRINT-6.2: Offline PWA & Service Worker**
   - Acceptance Criteria: PWA manifest (`manifest.json`), service worker precaching static application shell and question JSON files. Offline indicator banner when disconnected.
   - Tests/Gates: App loads and runs quizzes when offline in Chrome DevTools network throttle (offline).
 
