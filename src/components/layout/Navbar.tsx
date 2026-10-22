@@ -6,7 +6,6 @@ import { useState } from "react";
 import { ThemeToggle } from "../theme/ThemeToggle";
 import { ShortcutsModal } from "../ui/ShortcutsModal";
 import {
-  BookOpen,
   LayoutDashboard,
   Repeat,
   BarChart3,
@@ -15,6 +14,7 @@ import {
   Menu,
   X,
   Compass,
+  Github,
 } from "lucide-react";
 
 const NAV_LINKS = [
@@ -33,13 +33,26 @@ export function Navbar() {
   return (
     <nav className="sticky top-0 z-40 w-full border-b border-border bg-ground/85 backdrop-blur-md">
       <div className="max-w-6xl mx-auto px-4 h-14 flex items-center justify-between">
-        {/* Brand */}
+        {/* Bespoke Geometric Brand Emblem */}
         <Link
           href="/"
-          className="flex items-center gap-2.5 font-medium tracking-tight text-ink group"
+          className="flex items-center gap-2.5 font-medium tracking-tight text-ink group select-none"
         >
-          <div className="w-7 h-7 rounded-badge bg-surface border border-border flex items-center justify-center text-data group-hover:border-data transition-colors">
-            <BookOpen className="w-3.5 h-3.5" />
+          <div className="w-8 h-8 rounded-control bg-surface border border-border flex items-center justify-center text-data group-hover:border-data/60 transition-colors shadow-xs">
+            <svg
+              className="w-4 h-4 text-data"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2.2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z" />
+              <path d="M8 8h6" />
+              <path d="M8 12h8" />
+              <path d="M12 2v6" strokeWidth="1.5" className="opacity-40" />
+            </svg>
           </div>
           <div className="flex flex-col">
             <span className="text-sm font-semibold leading-tight text-ink">NPTEL Quiz</span>
@@ -57,7 +70,7 @@ export function Navbar() {
                 href={href}
                 className={`flex items-center gap-1.5 px-3 py-1.5 rounded-control text-xs font-medium transition-colors btn-press ${
                   isActive
-                    ? "bg-surface text-ink border border-border shadow-sm"
+                    ? "bg-surface text-ink border border-border shadow-xs font-semibold"
                     : "text-ink-muted hover:text-ink hover:bg-raised"
                 }`}
               >
@@ -70,8 +83,22 @@ export function Navbar() {
 
         {/* Right cluster */}
         <div className="flex items-center gap-2">
+          {/* GitHub Profile Link */}
+          <a
+            href="https://github.com/jeeva-m-21"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-press hidden sm:inline-flex items-center gap-1.5 px-2.5 py-1.5 text-xs font-mono text-ink-muted hover:text-ink bg-surface border border-border hover:bg-raised rounded-control transition-colors"
+            title="View Jeeva's GitHub Profile"
+            aria-label="Jeeva's GitHub Profile"
+          >
+            <Github className="w-3.5 h-3.5 text-ink" />
+            <span className="text-[11px]">@jeeva-m-21</span>
+          </a>
+
           <ShortcutsModal />
           <ThemeToggle />
+
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="md:hidden flex items-center justify-center w-8 h-8 rounded-control bg-surface border border-border text-ink"
@@ -84,7 +111,7 @@ export function Navbar() {
 
       {/* Mobile Menu Dropdown */}
       {mobileMenuOpen && (
-        <div className="md:hidden border-b border-border bg-surface px-4 py-3 space-y-1">
+        <div className="md:hidden border-b border-border bg-surface px-4 py-3 space-y-1 animate-in fade-in slide-in-from-top-2 duration-150">
           {NAV_LINKS.map(({ href, label, icon: Icon }) => {
             const isActive = pathname === href || (href !== "/" && pathname.startsWith(href));
             return (
@@ -94,7 +121,7 @@ export function Navbar() {
                 onClick={() => setMobileMenuOpen(false)}
                 className={`flex items-center gap-2.5 px-3 py-2 rounded-control text-sm font-medium ${
                   isActive
-                    ? "bg-raised text-ink border border-border"
+                    ? "bg-raised text-ink border border-border font-semibold"
                     : "text-ink-muted hover:text-ink hover:bg-raised"
                 }`}
               >
@@ -103,6 +130,21 @@ export function Navbar() {
               </Link>
             );
           })}
+
+          <div className="pt-2 border-t border-rule mt-2">
+            <a
+              href="https://github.com/jeeva-m-21"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-between px-3 py-2 rounded-control text-xs font-mono text-ink bg-raised border border-border"
+            >
+              <div className="flex items-center gap-2">
+                <Github className="w-4 h-4" />
+                <span>Developer GitHub: @jeeva-m-21</span>
+              </div>
+              <span className="text-data text-[10px]">↗</span>
+            </a>
+          </div>
         </div>
       )}
     </nav>

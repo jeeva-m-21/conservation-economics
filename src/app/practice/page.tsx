@@ -209,15 +209,42 @@ function PracticeContent() {
             </div>
           )}
 
-          <div className="p-4 rounded-card bg-raised/50 border border-border flex items-center justify-between">
-            <div>
-              <span className="text-xs font-semibold text-ink block">Available Questions</span>
-              <span className="text-xs text-ink-muted">Matching your current filter criteria</span>
+          {eligibleQuestions.length === 0 ? (
+            <div className="p-6 rounded-card bg-raised/30 border border-border text-center space-y-2">
+              <span className="text-xs font-semibold text-ink block">
+                {modeParam === "mistakes"
+                  ? "Zero Mistakes Recorded"
+                  : "No Questions Match Selected Filter"}
+              </span>
+              <p className="text-xs text-ink-muted max-w-sm mx-auto">
+                {modeParam === "mistakes"
+                  ? "You have answered every attempted question correctly so far! Complete more quizzes or review all weeks."
+                  : "Try clearing your filters or selecting a different week."}
+              </p>
+              {modeParam === "mistakes" && (
+                <div className="pt-2">
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    onClick={() => router.push("/practice")}
+                    className="text-xs"
+                  >
+                    View All Questions
+                  </Button>
+                </div>
+              )}
             </div>
-            <span className="text-lg font-mono font-bold text-data tabular">
-              {eligibleQuestions.length} Questions
-            </span>
-          </div>
+          ) : (
+            <div className="p-4 rounded-card bg-raised/50 border border-border flex items-center justify-between">
+              <div>
+                <span className="text-xs font-semibold text-ink block">Available Questions</span>
+                <span className="text-xs text-ink-muted">Matching your current filter criteria</span>
+              </div>
+              <span className="text-lg font-mono font-bold text-data tabular">
+                {eligibleQuestions.length} Questions
+              </span>
+            </div>
+          )}
 
           <Button
             variant="primary"

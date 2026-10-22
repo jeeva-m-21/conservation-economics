@@ -3,6 +3,7 @@ import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme/ThemeProvider";
 import { Navbar } from "@/components/layout/Navbar";
+import { Footer } from "@/components/layout/Footer";
 import { PwaProvider } from "@/components/pwa/PwaProvider";
 
 const sansFont = Inter({
@@ -66,6 +67,7 @@ export default function RootLayout({
             <main id="main-content" tabIndex={-1} className="flex-1 flex flex-col focus:outline-none">
               {children}
             </main>
+            <Footer />
           </PwaProvider>
         </ThemeProvider>
       </body>

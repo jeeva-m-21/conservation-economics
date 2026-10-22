@@ -188,15 +188,15 @@ export function QuestionCard({
               {/* Status Indicator Icon */}
               {showFeedback ? (
                 isAcceptedCorrect ? (
-                  <CheckCircle2 className="w-5 h-5 text-status-correct shrink-0" />
+                  <CheckCircle2 className="w-4 h-4 text-status-correct shrink-0" />
                 ) : isSelected ? (
-                  <XCircle className="w-5 h-5 text-status-wrong shrink-0" />
+                  <XCircle className="w-4 h-4 text-status-wrong shrink-0" />
                 ) : null
               ) : (
                 <div
-                  className={`w-4 h-4 rounded-full border transition-colors shrink-0 ${
+                  className={`w-3.5 h-3.5 rounded-full border transition-all shrink-0 ${
                     isSelected
-                      ? "border-data bg-data"
+                      ? "border-data bg-data ring-2 ring-data/20"
                       : "border-border group-hover:border-ink-muted"
                   }`}
                 />
@@ -209,17 +209,21 @@ export function QuestionCard({
       {/* Immediate Learn Mode Feedback Accordion */}
       {showFeedback && hasAnswered && (
         <div
-          className={`mt-6 p-4 rounded-card border text-sm animate-in fade-in duration-200 ${
+          className={`mt-6 p-4 rounded-card border text-sm animate-in fade-in duration-150 ${
             isCorrect
-              ? "bg-status-correct-bg/60 border-status-correct/30 text-ink"
-              : "bg-status-wrong-bg/60 border-status-wrong/30 text-ink"
+              ? "bg-status-correct-bg/40 border-status-correct/30 text-ink"
+              : "bg-status-wrong-bg/40 border-status-wrong/30 text-ink"
           }`}
         >
-          <div className="flex items-center gap-2 font-semibold mb-1">
-            <Lightbulb className="w-4 h-4 text-data" />
-            <span>{isCorrect ? "Correct!" : "Incorrect"}</span>
+          <div className="flex items-center gap-2 font-semibold text-xs tracking-tight mb-1">
+            <span
+              className={`w-2 h-2 rounded-full ${
+                isCorrect ? "bg-status-correct" : "bg-status-wrong"
+              }`}
+            />
+            <span>{isCorrect ? "Correct Solution" : "Incorrect Selection"}</span>
           </div>
-          <p className="text-xs text-ink-secondary leading-relaxed mt-1">
+          <p className="text-xs text-ink-secondary leading-relaxed mt-1 font-sans">
             {question.explanation ||
               `Accepted answer: ${question.options[question.originalOptionIndices.indexOf(question.answer[0])] || "Option " + (question.answer[0] + 1)}`}
           </p>

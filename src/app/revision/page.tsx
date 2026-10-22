@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import Link from "next/link";
 import { getAllQuestions } from "@/lib/questions";
 import { Question } from "@/lib/schema/question";
@@ -76,6 +76,54 @@ export default function RevisionPage() {
     setIsRevealed(false);
   }, [allQuestions, questionStats, selectedBoxFilter]);
 
+  const currentQ = activeDeck[currentIndex];
+  const currentStat = currentQ ? questionStats[currentQ.id] : null;
+  const currentBox = currentStat ? currentStat.box : 1;
+
+  const handleAdvance = useCallback(
+    (mastered: boolean) => {
+      if (!currentQ) return;
+      recordAnswerStat(currentQ.id, mastered);
+      setIsRevealed(false);
+      if (currentIndex < activeDeck.length - 1) {
+        setCurrentIndex((prev) => prev + 1);
+      } else {
+        // Completed current deck session
+        setCurrentIndex(0);
+      }
+    },
+    [currentQ, currentIndex, activeDeck.length, recordAnswerStat]
+  );
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (
+        e.target instanceof HTMLInputElement ||
+        e.target instanceof HTMLTextAreaElement
+      ) {
+        return;
+      }
+
+      if (!isRevealed) {
+        if (e.key === " " || e.key === "Enter") {
+          e.preventDefault();
+          setIsRevealed(true);
+        }
+      } else {
+        if (e.key === "1" || e.key === "ArrowLeft") {
+          e.preventDefault();
+          handleAdvance(false);
+        } else if (e.key === "2" || e.key === "ArrowRight") {
+          e.preventDefault();
+          handleAdvance(true);
+        }
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [isRevealed, handleAdvance]);
+
   if (loading) {
     return (
       <div className="flex-1 flex items-center justify-center p-8">
@@ -86,22 +134,6 @@ export default function RevisionPage() {
       </div>
     );
   }
-
-  const currentQ = activeDeck[currentIndex];
-  const currentStat = currentQ ? questionStats[currentQ.id] : null;
-  const currentBox = currentStat ? currentStat.box : 1;
-
-  const handleAdvance = (mastered: boolean) => {
-    if (!currentQ) return;
-    recordAnswerStat(currentQ.id, mastered);
-    setIsRevealed(false);
-    if (currentIndex < activeDeck.length - 1) {
-      setCurrentIndex((prev) => prev + 1);
-    } else {
-      // Completed current deck session
-      setCurrentIndex(0);
-    }
-  };
 
   return (
     <main className="max-w-4xl mx-auto w-full px-4 py-8">
