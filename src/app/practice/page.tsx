@@ -199,7 +199,7 @@ function PracticeContent() {
                 }
                 className="w-full h-10 px-3 text-xs font-mono rounded-control bg-surface border border-border text-ink"
               >
-                <option value="all">All Weeks (Complete 120 Questions Pool)</option>
+                <option value="all">All Weeks (Complete {manifestData.totalQuestions} Questions Pool)</option>
                 {manifestData.weeks.map((w) => (
                   <option key={w.week} value={w.week}>
                     Week {w.week.toString().padStart(2, "0")}: {w.title}

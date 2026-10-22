@@ -52,13 +52,11 @@ export function ShortcutsModal() {
     <>
       <button
         onClick={() => setIsOpen(true)}
-        className="btn-press hidden md:inline-flex items-center gap-1.5 px-2 py-1 text-xs font-mono text-ink-muted hover:text-ink bg-surface border border-border rounded-control transition-colors"
+        className="btn-press flex items-center justify-center w-8 h-8 rounded-control bg-surface border border-border hover:border-ink-muted text-ink transition-colors shrink-0"
         title="Keyboard shortcuts (?)"
         aria-label="View keyboard shortcuts"
       >
-        <Keyboard className="w-3.5 h-3.5" />
-        <span className="text-[11px]">Shortcuts</span>
-        <kbd className="px-1 py-0.2 bg-raised rounded border border-border text-[10px]">?</kbd>
+        <Keyboard className="w-4 h-4 text-ink-muted hover:text-ink transition-colors" />
       </button>
 
       <Modal

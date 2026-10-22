@@ -1,8 +1,38 @@
 {
-  "generatedAt": "2026-10-22T17:48:36.191Z",
-  "totalWeeks": 12,
-  "totalQuestions": 120,
+  "generatedAt": "2026-10-22T18:11:20.844Z",
+  "totalWeeks": 13,
+  "totalQuestions": 130,
   "weeks": [
+    {
+      "week": 0,
+      "title": "Week 0 : Assignment 0",
+      "due_date": "Prerequisite Assessment",
+      "questionCount": 10,
+      "questionIds": [
+        "w00-q001",
+        "w00-q002",
+        "w00-q003",
+        "w00-q004",
+        "w00-q005",
+        "w00-q006",
+        "w00-q007",
+        "w00-q008",
+        "w00-q009",
+        "w00-q010"
+      ],
+      "topics": [
+        "Anthropocene & Geological Epochs",
+        "Biogeography & Species Distribution",
+        "Conservation Biology & Fragmentation",
+        "Conservation Philosophy",
+        "Demography & Population Dynamics",
+        "Ecological Footprint & IPAT",
+        "Ecosystem Dynamics & Pollution",
+        "Geomorphology & Fluvial Systems",
+        "Marine Ecology & Climate Impact",
+        "Population Dispersal & Gene Flow"
+      ]
+    },
     {
       "week": 1,
       "title": "Week 1 : Assignment 1",

@@ -57,7 +57,7 @@ export function QuestionCard({
 
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [question, onSelectOption, onToggleFlag]);
+  }, [question, onSelectOption, onToggleFlag, onToggleBookmark]);
 
   const hasAnswered = question.userSelected.length > 0;
   const isCorrect =

@@ -86,4 +86,22 @@ describe("Question and Week Quiz Schema Validation", () => {
     const parsed = WeekQuizSchema.safeParse(duplicateIdQuiz);
     expect(parsed.success).toBe(false);
   });
+
+  it("validates a Week 0 prerequisite quiz object", () => {
+    const week0Quiz = {
+      week: 0,
+      title: "Week 0 : Assignment 0",
+      due_date: "Prerequisite Assessment",
+      questions: [
+        {
+          id: "w00-q001",
+          question: "Prerequisite question?",
+          options: ["Option 1", "Option 2"],
+          answer: [0],
+        },
+      ],
+    };
+    const parsed = WeekQuizSchema.safeParse(week0Quiz);
+    expect(parsed.success).toBe(true);
+  });
 });

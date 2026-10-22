@@ -175,3 +175,15 @@
 - [x] **SPRINT-6.4: Performance Optimization & Vercel Production Build**
   - Acceptance Criteria: Lighthouse score 95+ on Performance, Accessibility, Best Practices, and SEO. Zero TypeScript or ESLint warnings.
   - Native Checks: `npm run build` succeeds with zero errors.
+
+---
+
+## Sprint 7: Course Bank Expansion & Premium SaaS Polish
+- [x] **SPRINT-7.1: Week 0 Prerequisite Course Expansion & Full 130-Question Simulator**
+  - Acceptance Criteria: Ingest Week 0 (10 prerequisite questions) expanding course pool to 130 questions across Weeks 0–12. Update schema, loader, validator, manifest, and analytics. Add 130-question option to Final Exam Simulator.
+  - Native Checks: `npm run validate:questions`, `npm run build:manifest`, `npm run test:unit`, `npm run build` all pass.
+
+- [x] **SPRINT-7.2: Light Mode Button Visibility, Navbar Overflow & Copy Cleanup**
+  - Acceptance Criteria: Add high-contrast `variant="data"` to Button for solid green/teal fill and bold contrast text on module cards in light and dark mode. Convert navbar shortcut trigger to compact 32x32px square button to eliminate viewport overflow. Strip artificial AI/technical boilerplate badges and replace with calm, natural study companion copy.
+  - Native Checks: `npm run lint`, `npm run type-check`, `npx playwright test` all pass.
+

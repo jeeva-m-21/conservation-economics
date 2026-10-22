@@ -59,7 +59,7 @@ export default function AnalyticsPage() {
     manifestData.totalQuestions,
     questionStats
   );
-  const weekAccuracies = computeWeekAccuracies(attempts, 12);
+  const weekAccuracies = computeWeekAccuracies(attempts, 12, 0);
   const weakQuestionIds = identifyWeakSpots(questionStats);
   const streak = computeStudyStreak(attempts);
 
@@ -98,7 +98,7 @@ export default function AnalyticsPage() {
           </div>
           <h1 className="text-2xl font-bold tracking-tight text-ink">Score Analytics & Insights</h1>
           <p className="text-xs text-ink-muted mt-0.5">
-            Diagnostic performance breakdown across all 12 weeks of NPTEL Conservation Economics.
+            Diagnostic performance breakdown across all 13 assignments (Weeks 0–12) of NPTEL Conservation Economics.
           </p>
         </div>
 
@@ -152,7 +152,7 @@ export default function AnalyticsPage() {
           <div className="flex items-center justify-between mb-4">
             <div>
               <h2 className="text-sm font-semibold text-ink">Week-by-Week Accuracy</h2>
-              <p className="text-xs text-ink-muted">Average score percentage across each week's attempts.</p>
+              <p className="text-xs text-ink-muted">Average score percentage across each week&apos;s attempts.</p>
             </div>
             <BarChart3 className="w-4 h-4 text-ink-muted" />
           </div>

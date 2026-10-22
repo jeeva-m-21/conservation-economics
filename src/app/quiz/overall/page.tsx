@@ -167,15 +167,16 @@ export default function OverallExamPage() {
     return (
       <main className="max-w-2xl mx-auto w-full px-4 py-10 page-enter">
         <div className="text-center mb-8">
-          <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-control bg-raised border border-border text-[11px] font-mono text-ink-muted mb-3">
-            <span className="w-1.5 h-1.5 rounded-full bg-data animate-pulse" />
-            <span>NPTEL Certification Mock</span>
+          <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-control bg-surface border border-border text-xs text-ink-muted font-medium mb-3 shadow-2xs">
+            <span className="text-data font-semibold">Comprehensive Simulator</span>
+            <span className="text-border">·</span>
+            <span>Weeks 0 – 12</span>
           </div>
           <h1 className="text-2xl md:text-3xl font-bold tracking-tight text-ink font-sans">
             Final Exam Simulator
           </h1>
           <p className="text-xs md:text-sm text-ink-muted mt-1 max-w-md mx-auto">
-            Simulate the complete NPTEL certification exam conditions with questions drawn from across all 12 course weeks.
+            Simulate complete NPTEL certification exam conditions with questions drawn from across all 13 course weeks (Weeks 0 to 12).
           </p>
         </div>
 
@@ -190,19 +191,24 @@ export default function OverallExamPage() {
               <label className="text-xs font-semibold text-ink uppercase tracking-wider block mb-2">
                 Question Count
               </label>
-              <div className="grid grid-cols-3 gap-2">
-                {[30, 50, 100].map((count) => (
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
+                {[
+                  { count: 30, label: "30 Questions" },
+                  { count: 50, label: "50 Questions" },
+                  { count: 100, label: "100 Questions" },
+                  { count: 130, label: "130 Questions (All)" },
+                ].map((item) => (
                   <button
-                    key={count}
+                    key={item.count}
                     type="button"
-                    onClick={() => setQuestionCount(count)}
-                    className={`btn-press py-2 rounded-control border text-xs font-mono tabular font-semibold transition-colors ${
-                      questionCount === count
-                        ? "bg-data text-data-contrast font-semibold border-transparent"
+                    onClick={() => setQuestionCount(item.count)}
+                    className={`btn-press py-2.5 px-2 rounded-control border text-xs font-mono tabular font-medium transition-colors ${
+                      questionCount === item.count
+                        ? "bg-data text-data-contrast font-semibold border-transparent shadow-xs"
                         : "bg-surface border-border text-ink hover:bg-raised"
                     }`}
                   >
-                    {count} Questions
+                    {item.label}
                   </button>
                 ))}
               </div>
@@ -251,7 +257,7 @@ export default function OverallExamPage() {
                   }`}
                 >
                   <div className="font-semibold text-ink">Even Balance</div>
-                  <div className="text-[11px] text-ink-muted mt-0.5">Equal representation from all 12 weeks</div>
+                  <div className="text-[11px] text-ink-muted mt-0.5">Equal representation from all 13 course weeks (Weeks 0–12)</div>
                 </button>
 
                 <button

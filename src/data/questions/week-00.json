@@ -1,0 +1,157 @@
+{
+  "week": 0,
+  "title": "Week 0 : Assignment 0",
+  "due_date": "Prerequisite Assessment",
+  "questions": [
+    {
+      "id": "w00-q001",
+      "question": "The geographical area within which a species can naturally be found is its:",
+      "options": [
+        "Tolerance",
+        "Abundance",
+        "Range",
+        "Affluence"
+      ],
+      "answer": [
+        2
+      ],
+      "topic": "Biogeography & Species Distribution",
+      "explanation": "A species' geographical range is the spatial boundary within which its individuals naturally live, forage, and reproduce."
+    },
+    {
+      "id": "w00-q002",
+      "question": "Excess nitrogen fertilizer enters a pond, causes algal growth, and later creates oxygen-poor conditions. This process shows disturbance in:",
+      "options": [
+        "Political geography",
+        "Biogeochemical cycles",
+        "Cartographic methods",
+        "Habitat selection"
+      ],
+      "answer": [
+        1
+      ],
+      "topic": "Ecosystem Dynamics & Pollution",
+      "explanation": "Eutrophication and hypereutrophic dead zones stem from direct anthropogenic interference in biogeochemical nutrient cycling (nitrogen and phosphorus)."
+    },
+    {
+      "id": "w00-q003",
+      "question": "The discipline of Demography is most closely related to:",
+      "options": [
+        "Phytogeography",
+        "Zoogeography",
+        "Population Geography",
+        "Economic Geography"
+      ],
+      "answer": [
+        2
+      ],
+      "topic": "Demography & Population Dynamics",
+      "explanation": "Demography studies the statistics of births, deaths, age distributions, and migration of human populations, tying directly into Population Geography."
+    },
+    {
+      "id": "w00-q004",
+      "question": "A dam traps sediment upstream, reducing the amount of silt reaching a delta. The likely result is:",
+      "options": [
+        "Expansion of the ozone layer",
+        "Increase in coral shell formation",
+        "Change in the geomorphology of the delta",
+        "Increase in ultraviolet radiation"
+      ],
+      "answer": [
+        2
+      ],
+      "topic": "Geomorphology & Fluvial Systems",
+      "explanation": "Deltas rely on incoming sediment deposition to counteract coastal wave erosion and subsidence. Restricting silt upstream triggers erosion and alters delta geomorphology."
+    },
+    {
+      "id": "w00-q005",
+      "question": "The quantum of human impacts can be written as",
+      "options": [
+        "I = P + A + T",
+        "I = P X A + T",
+        "I = P X A X T",
+        "I = P + A X T"
+      ],
+      "answer": [
+        2
+      ],
+      "topic": "Ecological Footprint & IPAT",
+      "explanation": "The classic IPAT formula by Ehrlich and Holdren calculates environmental impact as: Impact (I) = Population (P) × Affluence (A) × Technology (T)."
+    },
+    {
+      "id": "w00-q006",
+      "question": "A large continuous forest is split by a highway into two smaller patches, each too small to support wide-ranging animals. This is:",
+      "options": [
+        "Habitat degradation",
+        "Habitat displacement",
+        "Habitat loss",
+        "Habitat fragmentation"
+      ],
+      "answer": [
+        3
+      ],
+      "topic": "Conservation Biology & Fragmentation",
+      "explanation": "Habitat fragmentation is the breaking apart of continuous habitat into smaller, isolated patches, creating edge effects and isolating sub-populations."
+    },
+    {
+      "id": "w00-q007",
+      "question": "Increased atmospheric carbon dioxide dissolves into oceans and makes survival difficult for organisms with calcium carbonate shells. This is mainly due to:",
+      "options": [
+        "Nitrogen fixation",
+        "Ozone formation",
+        "Ocean acidification",
+        "Soil waterlogging"
+      ],
+      "answer": [
+        2
+      ],
+      "topic": "Marine Ecology & Climate Impact",
+      "explanation": "CO2 dissolves into seawater forming carbonic acid, which reduces ocean pH and depletes carbonate ions necessary for calcifying organisms to build shells."
+    },
+    {
+      "id": "w00-q008",
+      "question": "The Trinity explosion of 1945 is taken as the beginning of the",
+      "options": [
+        "Holocene",
+        "Cenocene",
+        "Anthropocene",
+        "Eocene"
+      ],
+      "answer": [
+        2
+      ],
+      "topic": "Anthropocene & Geological Epochs",
+      "explanation": "The 1945 Trinity nuclear detonation dispersed artificial radionuclides globally, widely considered a prime candidate marker for the Anthropocene epoch."
+    },
+    {
+      "id": "w00-q009",
+      "question": "The movement of individuals away from their place of birth or hatching or seed production into a new habitat or area to survive and reproduce is called",
+      "options": [
+        "translocation",
+        "migration",
+        "dispersal",
+        "drifting"
+      ],
+      "answer": [
+        2
+      ],
+      "topic": "Population Dispersal & Gene Flow",
+      "explanation": "Dispersal is the ecological movement of individuals from their natal site or birthplace to another breeding site to establish and reproduce."
+    },
+    {
+      "id": "w00-q010",
+      "question": "Sustainable harvest of resources falls under the category of:",
+      "options": [
+        "conservation",
+        "preservation",
+        "environmentalism",
+        "none of the above"
+      ],
+      "answer": [
+        0
+      ],
+      "topic": "Conservation Philosophy",
+      "explanation": "Conservation advocates for the sustainable, wise utilization and management of natural resources, contrasting with preservation which forbids consumptive harvesting."
+    }
+  ]
+}

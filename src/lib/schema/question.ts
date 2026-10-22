@@ -30,7 +30,7 @@ export type Question = z.infer<typeof QuestionSchema>;
 
 export const WeekQuizSchema = z
   .object({
-    week: z.number().int().min(1).max(12),
+    week: z.number().int().min(0).max(12),
     title: z.string().min(1),
     due_date: z.string().nullable().optional(),
     questions: z.array(QuestionSchema),

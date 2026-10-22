@@ -48,11 +48,12 @@ export function computeReadinessScore(
  */
 export function computeWeekAccuracies(
   attempts: AttemptRecord[],
-  totalWeeks = 12
+  totalWeeks = 12,
+  startWeek = 1
 ): WeekAccuracyStat[] {
   const result: WeekAccuracyStat[] = [];
 
-  for (let w = 1; w <= totalWeeks; w++) {
+  for (let w = startWeek; w <= totalWeeks; w++) {
     const weekAttempts = attempts.filter((a) => a.week === w);
 
     let totalScore = 0;

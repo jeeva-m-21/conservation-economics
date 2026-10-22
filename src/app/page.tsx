@@ -55,15 +55,18 @@ export default function DashboardPage() {
   );
 
   // Map best scores per week
-  const weekBestScores: Record<number, number> = {};
-  for (const a of attempts) {
-    if (a.week !== undefined) {
-      const prev = weekBestScores[a.week] || 0;
-      if (a.percentage > prev) {
-        weekBestScores[a.week] = a.percentage;
+  const weekBestScores = useMemo(() => {
+    const scores: Record<number, number> = {};
+    for (const a of attempts) {
+      if (a.week !== undefined) {
+        const prev = scores[a.week] || 0;
+        if (a.percentage > prev) {
+          scores[a.week] = a.percentage;
+        }
       }
     }
-  }
+    return scores;
+  }, [attempts]);
 
   // Filter weeks
   const filteredWeeks = useMemo(() => {
@@ -83,11 +86,10 @@ export default function DashboardPage() {
       {/* Executive SaaS Hero Header */}
       <header className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 pb-6 border-b border-border">
         <div className="space-y-2 max-w-2xl">
-          <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-control bg-raised border border-border text-[11px] font-mono text-ink-muted">
-            <span className="w-1.5 h-1.5 rounded-full bg-data animate-pulse" />
-            <span>NPTEL Certification Prep</span>
-            <span className="text-border">|</span>
-            <span>12 Weeks · 120 Questions</span>
+          <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-control bg-surface border border-border text-xs text-ink-muted font-medium shadow-2xs">
+            <span className="text-data font-semibold">13 Assignments</span>
+            <span className="text-border">·</span>
+            <span>130 Course Questions (Weeks 0–12)</span>
           </div>
 
           <h1 className="text-3xl md:text-4xl font-bold tracking-tight text-ink font-sans">
@@ -95,7 +97,7 @@ export default function DashboardPage() {
           </h1>
 
           <p className="text-sm text-ink-muted leading-relaxed">
-            High-mastery preparation console. Complete 12 weekly course assignments, practice spaced retrieval with Leitner 5-box memory, and run timed certification simulators.
+            Focused self-study console for NPTEL Conservation Economics. Work through weekly problem sets, drill difficult concepts in practice mode, and simulate timed certification exams.
           </p>
         </div>
 
@@ -103,9 +105,9 @@ export default function DashboardPage() {
         <div className="flex items-center gap-2.5 shrink-0">
           <Link href="/quiz/overall">
             <Button
-              variant="primary"
+              variant="data"
               size="md"
-              className="bg-data text-data-contrast font-semibold hover:bg-data/90 shadow-sm"
+              className="shadow-sm"
             >
               <Play className="w-3.5 h-3.5 fill-current" />
               <span>Exam Simulator</span>
@@ -317,7 +319,7 @@ export default function DashboardPage() {
                 <div className="pt-4 mt-4 border-t border-rule flex items-center justify-between gap-2">
                   <Link href={`/learn?week=${week.week}`} className="flex-1">
                     <Button
-                      variant="ghost"
+                      variant="outline"
                       size="sm"
                       className="w-full text-xs text-ink-muted hover:text-ink hover:bg-raised"
                     >
@@ -327,9 +329,9 @@ export default function DashboardPage() {
 
                   <Link href={`/quiz/weekly/${week.week}`} className="flex-1">
                     <Button
-                      variant="primary"
+                      variant="data"
                       size="sm"
-                      className="w-full text-xs bg-raised hover:bg-raised/80 text-ink border border-border group-hover:border-data/40 group-hover:bg-data group-hover:text-data-contrast font-semibold transition-colors"
+                      className="w-full text-xs"
                     >
                       <Play className="w-3 h-3 fill-current" />
                       <span>Quiz</span>

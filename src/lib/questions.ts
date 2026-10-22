@@ -1,7 +1,8 @@
 import { Question, WeekQuiz, WeekQuizSchema } from "./schema/question";
 
-// Static imports or dynamic require mapping for 12 weeks
+// Static imports or dynamic require mapping for 13 weeks (Week 0 to Week 12)
 const weekLoaders: Record<number, () => Promise<{ default: WeekQuiz }>> = {
+  0: () => import("@/data/questions/week-00.json"),
   1: () => import("@/data/questions/week-01.json"),
   2: () => import("@/data/questions/week-02.json"),
   3: () => import("@/data/questions/week-03.json"),
@@ -30,7 +31,7 @@ export async function getWeekQuiz(weekNumber: number): Promise<WeekQuiz | null> 
 
 export async function getAllQuestions(): Promise<Question[]> {
   const allQs: Question[] = [];
-  for (let w = 1; w <= 12; w++) {
+  for (let w = 0; w <= 12; w++) {
     const quiz = await getWeekQuiz(w);
     if (quiz) {
       allQs.push(...quiz.questions);

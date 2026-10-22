@@ -81,7 +81,7 @@ export function Navbar() {
         </div>
 
         {/* Right cluster */}
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
           {/* GitHub Profile Link */}
           <a
             href="https://github.com/jeeva-m-21"
