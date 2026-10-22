@@ -40,6 +40,11 @@ export function QuestionCard({
       if (e.key === "f" || e.key === "F") {
         e.preventDefault();
         onToggleFlag();
+      } else if (e.key === "b" || e.key === "B") {
+        if (onToggleBookmark) {
+          e.preventDefault();
+          onToggleBookmark();
+        }
       } else if (["1", "2", "3", "4"].includes(e.key)) {
         const visualIdx = parseInt(e.key, 10) - 1;
         if (visualIdx < question.options.length) {
@@ -63,6 +68,14 @@ export function QuestionCard({
 
   return (
     <div className="w-full bg-surface rounded-card border border-border p-5 md:p-7 shadow-sm">
+      {/* Screen Reader Live Status */}
+      <span className="sr-only" role="status" aria-live="polite">
+        Question {currentIndex + 1} of {totalQuestions}: {question.question}.
+        {hasAnswered
+          ? ` Selected option: ${question.options[question.originalOptionIndices.indexOf(question.userSelected[0])]}.`
+          : " No option selected."}
+        {question.flagged ? " Question is flagged for review." : ""}
+      </span>
       {/* Top Meta Bar */}
       <div className="flex items-center justify-between gap-2 border-b border-rule pb-4 mb-5">
         <div className="flex items-center gap-2">
@@ -150,7 +163,7 @@ export function QuestionCard({
             <div
               key={visualIdx}
               onClick={() => onSelectOption(originalIdx)}
-              className={`btn-press group w-full flex items-center justify-between p-3.5 md:p-4 rounded-card border cursor-pointer select-none transition-colors ${optionStyle}`}
+              className={`btn-press group w-full flex items-center justify-between p-3.5 md:p-4 rounded-card border cursor-pointer select-none transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-data ${optionStyle}`}
               role="radio"
               aria-checked={isSelected}
               tabIndex={0}

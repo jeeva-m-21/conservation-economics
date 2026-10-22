@@ -38,6 +38,9 @@ export function QuizTimer({ targetEndAt, onExpire, className = "" }: QuizTimerPr
 
   return (
     <div
+      role="timer"
+      aria-label={`Time remaining: ${mins} minutes, ${secs} seconds`}
+      aria-live={isUrgent ? "assertive" : "off"}
       className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-control font-mono text-xs font-semibold select-none border transition-colors tabular ${
         isUrgent
           ? "bg-status-flag-bg text-status-flag border-status-flag/40 animate-pulse"

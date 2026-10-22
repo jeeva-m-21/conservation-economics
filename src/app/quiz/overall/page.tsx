@@ -57,6 +57,45 @@ export default function OverallExamPage() {
     });
   }, [loadSettings]);
 
+  useEffect(() => {
+    if (!session || !isStarted) return;
+    const isFirst = session.currentIndex === 0;
+    const isLast = session.currentIndex === session.questions.length - 1;
+
+    const handleKeyNav = (e: KeyboardEvent) => {
+      if (
+        e.target instanceof HTMLInputElement ||
+        e.target instanceof HTMLTextAreaElement ||
+        showSubmitModal
+      ) {
+        return;
+      }
+
+      if (e.key === "ArrowRight") {
+        if (!isLast) {
+          e.preventDefault();
+          nextQuestion();
+        }
+      } else if (e.key === "ArrowLeft") {
+        if (!isFirst) {
+          e.preventDefault();
+          prevQuestion();
+        }
+      } else if (e.key === "Enter" && !e.shiftKey) {
+        if (isLast) {
+          e.preventDefault();
+          setShowSubmitModal(true);
+        } else {
+          e.preventDefault();
+          nextQuestion();
+        }
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyNav);
+    return () => window.removeEventListener("keydown", handleKeyNav);
+  }, [session, isStarted, showSubmitModal, nextQuestion, prevQuestion]);
+
   const handleStartExam = () => {
     const endAt = timerMinutes > 0 ? Date.now() + timerMinutes * 60 * 1000 : undefined;
     setTargetEndAt(endAt);

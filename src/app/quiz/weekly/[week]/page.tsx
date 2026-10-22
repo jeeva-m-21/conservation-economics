@@ -70,6 +70,45 @@ export default function WeeklyQuizPage({
     });
   }, [weekNum, loadSettings, settings.defaultTimerMin, settings.negativeMarking, settings.shuffleOptions, startSession]);
 
+  useEffect(() => {
+    if (!session) return;
+    const isFirst = session.currentIndex === 0;
+    const isLast = session.currentIndex === session.questions.length - 1;
+
+    const handleKeyNav = (e: KeyboardEvent) => {
+      if (
+        e.target instanceof HTMLInputElement ||
+        e.target instanceof HTMLTextAreaElement ||
+        showSubmitModal
+      ) {
+        return;
+      }
+
+      if (e.key === "ArrowRight") {
+        if (!isLast) {
+          e.preventDefault();
+          nextQuestion();
+        }
+      } else if (e.key === "ArrowLeft") {
+        if (!isFirst) {
+          e.preventDefault();
+          prevQuestion();
+        }
+      } else if (e.key === "Enter" && !e.shiftKey) {
+        if (isLast) {
+          e.preventDefault();
+          setShowSubmitModal(true);
+        } else {
+          e.preventDefault();
+          nextQuestion();
+        }
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyNav);
+    return () => window.removeEventListener("keydown", handleKeyNav);
+  }, [session, showSubmitModal, nextQuestion, prevQuestion]);
+
   if (loading || !quizData || !session) {
     return (
       <div className="flex-1 flex items-center justify-center p-8">

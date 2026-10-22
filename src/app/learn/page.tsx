@@ -42,6 +42,36 @@ function LearnContent() {
     });
   }, [selectedWeek]);
 
+  useEffect(() => {
+    if (!quizData) return;
+    const isFirst = currentIndex === 0;
+    const isLast = currentIndex === quizData.questions.length - 1;
+
+    const handleKeyNav = (e: KeyboardEvent) => {
+      if (
+        e.target instanceof HTMLInputElement ||
+        e.target instanceof HTMLTextAreaElement
+      ) {
+        return;
+      }
+
+      if (e.key === "ArrowRight" || (e.key === "Enter" && !e.shiftKey)) {
+        if (!isLast) {
+          e.preventDefault();
+          setCurrentIndex((idx) => idx + 1);
+        }
+      } else if (e.key === "ArrowLeft") {
+        if (!isFirst) {
+          e.preventDefault();
+          setCurrentIndex((idx) => idx - 1);
+        }
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyNav);
+    return () => window.removeEventListener("keydown", handleKeyNav);
+  }, [quizData, currentIndex]);
+
   if (loading || !quizData) {
     return (
       <div className="flex-1 flex items-center justify-center p-8">

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { ThemeToggle } from "../theme/ThemeToggle";
+import { ShortcutsModal } from "../ui/ShortcutsModal";
 import {
   BookOpen,
   LayoutDashboard,
@@ -69,6 +70,7 @@ export function Navbar() {
 
         {/* Right cluster */}
         <div className="flex items-center gap-2">
+          <ShortcutsModal />
           <ThemeToggle />
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}

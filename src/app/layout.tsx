@@ -41,8 +41,16 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning className={`${sansFont.variable} ${monoFont.variable}`}>
       <body className="antialiased min-h-[100dvh] flex flex-col bg-ground text-ink selection:bg-data/20">
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+          <a
+            href="#main-content"
+            className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus:px-3 focus:py-2 focus:bg-ink focus:text-ground focus:rounded-control focus:shadow-md focus:text-xs focus:font-mono focus:outline-none focus:ring-2 focus:ring-data"
+          >
+            Skip to main content
+          </a>
           <Navbar />
-          <div className="flex-1 flex flex-col">{children}</div>
+          <main id="main-content" tabIndex={-1} className="flex-1 flex flex-col focus:outline-none">
+            {children}
+          </main>
         </ThemeProvider>
       </body>
     </html>

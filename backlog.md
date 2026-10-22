@@ -156,7 +156,7 @@
 ## Sprint 6: Polish, Offline PWA, Accessibility & E2E Testing
 *Objective: Provide production-grade reliability, WCAG AA accessibility, offline support, and full E2E test coverage.*
 
-- [ ] **SPRINT-6.1: Keyboard Shortcuts & WCAG AA Accessibility Audit**
+- [x] **SPRINT-6.1: Keyboard Shortcuts & WCAG AA Accessibility Audit**
   - Acceptance Criteria: Full keyboard navigation (`1-4` options, `Enter` next/submit, `F` bookmark, `←/→` navigation), screen reader aria-labels, focus indicators, color contrast AA compliance.
   - Tests/Gates: Automated axe-core / a11y checks pass.
 
