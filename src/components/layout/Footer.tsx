@@ -54,8 +54,8 @@ export function Footer() {
             >
               View Developer Projects
             </a>
-            <span>·</span>
-            <kbd className="px-1.5 py-0.5 bg-raised rounded border border-border text-[10px]">
+            <span className="hidden md:inline">·</span>
+            <kbd className="hidden md:inline-block px-1.5 py-0.5 bg-raised rounded border border-border text-[10px]">
               ? for shortcuts
             </kbd>
           </div>

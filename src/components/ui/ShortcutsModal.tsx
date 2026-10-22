@@ -52,7 +52,7 @@ export function ShortcutsModal() {
     <>
       <button
         onClick={() => setIsOpen(true)}
-        className="btn-press flex items-center justify-center w-8 h-8 rounded-control bg-surface border border-border hover:border-ink-muted text-ink transition-colors shrink-0"
+        className="btn-press hidden md:flex items-center justify-center w-8 h-8 rounded-control bg-surface border border-border hover:border-ink-muted text-ink transition-colors shrink-0"
         title="Keyboard shortcuts (?)"
         aria-label="View keyboard shortcuts"
       >
@@ -63,23 +63,20 @@ export function ShortcutsModal() {
         isOpen={isOpen}
         onClose={() => setIsOpen(false)}
         title="Keyboard Navigation"
+        description="Physical keyboard shortcuts for desktop study & fast question answering."
       >
-        <div className="space-y-6">
-          <p className="text-xs text-ink-secondary">
-            Use these keyboard shortcuts to navigate questions and run quizzes rapidly without reaching for the mouse.
-          </p>
-
-          <div className="space-y-5">
+        <div className="space-y-5">
+          <div className="space-y-4">
             {shortcuts.map((group) => (
-              <div key={group.category} className="space-y-2.5">
-                <h4 className="text-xs font-mono font-semibold uppercase tracking-wider text-ink-muted">
+              <div key={group.category} className="space-y-2">
+                <h4 className="text-[11px] font-mono font-semibold uppercase tracking-wider text-ink-muted">
                   {group.category}
                 </h4>
                 <div className="divide-y divide-rule border border-border rounded-card bg-surface overflow-hidden">
                   {group.items.map((item, idx) => (
                     <div
                       key={idx}
-                      className="flex items-center justify-between px-3.5 py-2.5 text-xs"
+                      className="flex items-center justify-between px-3.5 py-2 text-xs"
                     >
                       <span className="text-ink">{item.description}</span>
                       <div className="flex items-center gap-1">
@@ -102,9 +99,9 @@ export function ShortcutsModal() {
           <div className="pt-2 border-t border-rule flex justify-end">
             <button
               onClick={() => setIsOpen(false)}
-              className="btn-press px-4 py-2 text-xs font-medium rounded-control bg-raised hover:bg-raised/80 text-ink border border-border transition-colors"
+              className="btn-press px-4 py-1.5 text-xs font-semibold rounded-control bg-data text-data-contrast hover:opacity-90 transition-opacity"
             >
-              Close
+              Got it
             </button>
           </div>
         </div>

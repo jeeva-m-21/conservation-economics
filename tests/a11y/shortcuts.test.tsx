@@ -3,6 +3,7 @@ import { render, screen, fireEvent } from "@testing-library/react";
 import React from "react";
 import { QuestionCard } from "@/components/quiz/QuestionCard";
 import { QuizTimer } from "@/components/quiz/QuizTimer";
+import { Modal } from "@/components/ui/Modal";
 import { QuizQuestion } from "@/lib/engine/quiz";
 
 describe("Accessibility & Keyboard Shortcuts (WCAG AA)", () => {
@@ -109,5 +110,22 @@ describe("Accessibility & Keyboard Shortcuts (WCAG AA)", () => {
     const timer = screen.getByRole("timer");
     expect(timer).toBeDefined();
     expect(timer.getAttribute("aria-label")).toMatch(/time remaining/i);
+  });
+
+  it("renders centered accessible Modal and closes on Escape", () => {
+    const onClose = vi.fn();
+    const { unmount } = render(
+      <Modal isOpen={true} onClose={onClose} title="Navigation Guide">
+        <p>Shortcuts content</p>
+      </Modal>
+    );
+
+    const dialog = screen.getByRole("dialog");
+    expect(dialog).toBeDefined();
+    expect(dialog.getAttribute("aria-modal")).toBe("true");
+
+    fireEvent.keyDown(window, { key: "Escape" });
+    expect(onClose).toHaveBeenCalled();
+    unmount();
   });
 });

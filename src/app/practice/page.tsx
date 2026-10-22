@@ -49,6 +49,45 @@ function PracticeContent() {
     });
   }, [loadProgress]);
 
+  useEffect(() => {
+    if (!isPracticing || !session) return;
+    const isFirst = session.currentIndex === 0;
+    const isLast = session.currentIndex === session.questions.length - 1;
+
+    const handleKeyNav = (e: KeyboardEvent) => {
+      if (
+        e.target instanceof HTMLInputElement ||
+        e.target instanceof HTMLTextAreaElement ||
+        e.target instanceof HTMLSelectElement
+      ) {
+        return;
+      }
+
+      if (e.key === "ArrowRight") {
+        if (!isLast) {
+          e.preventDefault();
+          nextQuestion();
+        }
+      } else if (e.key === "ArrowLeft") {
+        if (!isFirst) {
+          e.preventDefault();
+          prevQuestion();
+        }
+      } else if (e.key === "Enter" && !e.shiftKey) {
+        e.preventDefault();
+        if (isLast) {
+          setIsPracticing(false);
+          resetSession();
+        } else {
+          nextQuestion();
+        }
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyNav);
+    return () => window.removeEventListener("keydown", handleKeyNav);
+  }, [isPracticing, session, nextQuestion, prevQuestion, resetSession]);
+
   if (loading) {
     return (
       <div className="flex-1 flex items-center justify-center p-8">

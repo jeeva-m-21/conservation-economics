@@ -5,6 +5,7 @@ import { ThemeProvider } from "@/components/theme/ThemeProvider";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { PwaProvider } from "@/components/pwa/PwaProvider";
+import { Analytics } from "@vercel/analytics/next";
 
 const sansFont = Inter({
   subsets: ["latin"],
@@ -68,6 +69,7 @@ export default function RootLayout({
               {children}
             </main>
             <Footer />
+            <Analytics />
           </PwaProvider>
         </ThemeProvider>
       </body>
