@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --ground: #f4f6f4;
+    --surface: #ffffff;
+    --raised: #ecefec;
+    --border: #e2e6e2;
+    --rule: #ebebeb;
+    
+    --text-ink: #0a0a0a;
+    --text-muted: #5a625a;
+    --text-tertiary: #8c948c;
+
+    --data-hue: #0f766e;
+    --data-hue-subtle: #f0fdfa;
+    --data-hue-ink: #134e4a;
+
+    --status-correct: #15803d;
+    --status-correct-bg: #f0fdf4;
+    --status-wrong: #b91c1c;
+    --status-wrong-bg: #fef2f2;
+    --status-flag: #b45309;
+    --status-flag-bg: #fffbeb;
+
+    --radius-card: 8px;
+    --radius-control: 6px;
+    --radius-badge: 4px;
+
+    --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+    --ease-drawer: cubic-bezier(0.32, 0.72, 0, 1);
+  }
+
+  .dark {
+    --ground: #0a0c0a;
+    --surface: #121512;
+    --raised: #1a1e1a;
+    --border: rgba(255, 255, 255, 0.08);
+    --rule: rgba(255, 255, 255, 0.05);
+
+    --text-ink: #f5f7f5;
+    --text-muted: #9ba39b;
+    --text-tertiary: #606860;
+
+    --data-hue: #2dd4bf;
+    --data-hue-subtle: rgba(45, 212, 191, 0.12);
+    --data-hue-ink: #99f6e4;
+
+    --status-correct: #4ade80;
+    --status-correct-bg: rgba(74, 222, 128, 0.12);
+    --status-wrong: #f87171;
+    --status-wrong-bg: rgba(248, 113, 113, 0.12);
+    --status-flag: #fbbf24;
+    --status-flag-bg: rgba(251, 191, 36, 0.12);
+  }
+
+  /* Mobile-Native Discipline */
+  html {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-text-size-adjust: 100%;
+    overscroll-behavior: none;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  body {
+    background-color: var(--ground);
+    color: var(--text-ink);
+    min-height: 100dvh;
+    font-family: var(--font-geist-sans), Inter, system-ui, sans-serif;
+  }
+
+  /* Prevent auto-zoom on iOS */
+  input, select, textarea {
+    font-size: 16px !important;
+  }
+
+  /* Eliminate tap delay and prevent selection on interactive controls */
+  button, a, [role="button"], .interactive-control {
+    touch-action: manipulation;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+
+  /* Tabular numbers on all counters, keys, and values */
+  .tabular {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+/* Custom Emil Kowalski Active Feedback */
+.btn-press {
+  transition: transform 100ms cubic-bezier(0.23, 1, 0.32, 1), background-color 100ms ease;
+}
+.btn-press:active {
+  transform: scale(0.97);
+}

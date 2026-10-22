@@ -1,0 +1,235 @@
+{
+  "generatedAt": "2026-10-22T16:30:38.817Z",
+  "totalWeeks": 12,
+  "totalQuestions": 120,
+  "weeks": [
+    {
+      "week": 1,
+      "title": "Week 1 : Assignment 1",
+      "due_date": "2026-08-05, 23:59 IST",
+      "questionCount": 10,
+      "questionIds": [
+        "w01-q001",
+        "w01-q002",
+        "w01-q003",
+        "w01-q004",
+        "w01-q005",
+        "w01-q006",
+        "w01-q007",
+        "w01-q008",
+        "w01-q009",
+        "w01-q010"
+      ],
+      "topics": []
+    },
+    {
+      "week": 2,
+      "title": "Week 2 : Assignment 2",
+      "due_date": "2026-08-05, 23:59 IST",
+      "questionCount": 10,
+      "questionIds": [
+        "w02-q001",
+        "w02-q002",
+        "w02-q003",
+        "w02-q004",
+        "w02-q005",
+        "w02-q006",
+        "w02-q007",
+        "w02-q008",
+        "w02-q009",
+        "w02-q010"
+      ],
+      "topics": []
+    },
+    {
+      "week": 3,
+      "title": "Week 3 : Assignment 3",
+      "due_date": "2026-08-12, 23:59 IST",
+      "questionCount": 10,
+      "questionIds": [
+        "w03-q001",
+        "w03-q002",
+        "w03-q003",
+        "w03-q004",
+        "w03-q005",
+        "w03-q006",
+        "w03-q007",
+        "w03-q008",
+        "w03-q009",
+        "w03-q010"
+      ],
+      "topics": []
+    },
+    {
+      "week": 4,
+      "title": "Week 4 : Assignment 4",
+      "due_date": "2026-08-19, 23:59 IST",
+      "questionCount": 10,
+      "questionIds": [
+        "w04-q001",
+        "w04-q002",
+        "w04-q003",
+        "w04-q004",
+        "w04-q005",
+        "w04-q006",
+        "w04-q007",
+        "w04-q008",
+        "w04-q009",
+        "w04-q010"
+      ],
+      "topics": []
+    },
+    {
+      "week": 5,
+      "title": "Week 5 : Assignment 5",
+      "due_date": "2026-08-26, 23:59 IST",
+      "questionCount": 10,
+      "questionIds": [
+        "w05-q001",
+        "w05-q002",
+        "w05-q003",
+        "w05-q004",
+        "w05-q005",
+        "w05-q006",
+        "w05-q007",
+        "w05-q008",
+        "w05-q009",
+        "w05-q010"
+      ],
+      "topics": []
+    },
+    {
+      "week": 6,
+      "title": "Week 6 : Assignment 6",
+      "due_date": "2026-09-02, 23:59 IST",
+      "questionCount": 10,
+      "questionIds": [
+        "w06-q001",
+        "w06-q002",
+        "w06-q003",
+        "w06-q004",
+        "w06-q005",
+        "w06-q006",
+        "w06-q007",
+        "w06-q008",
+        "w06-q009",
+        "w06-q010"
+      ],
+      "topics": []
+    },
+    {
+      "week": 7,
+      "title": "Week 7 : Assignment 7",
+      "due_date": "2026-09-09, 23:59 IST",
+      "questionCount": 10,
+      "questionIds": [
+        "w07-q001",
+        "w07-q002",
+        "w07-q003",
+        "w07-q004",
+        "w07-q005",
+        "w07-q006",
+        "w07-q007",
+        "w07-q008",
+        "w07-q009",
+        "w07-q010"
+      ],
+      "topics": []
+    },
+    {
+      "week": 8,
+      "title": "Week 8 : Assignment 8",
+      "due_date": "2026-09-16, 23:59 IST",
+      "questionCount": 10,
+      "questionIds": [
+        "w08-q001",
+        "w08-q002",
+        "w08-q003",
+        "w08-q004",
+        "w08-q005",
+        "w08-q006",
+        "w08-q007",
+        "w08-q008",
+        "w08-q009",
+        "w08-q010"
+      ],
+      "topics": []
+    },
+    {
+      "week": 9,
+      "title": "Week 9 : Assignment 9",
+      "due_date": "2026-09-23, 23:59 IST",
+      "questionCount": 10,
+      "questionIds": [
+        "w09-q001",
+        "w09-q002",
+        "w09-q003",
+        "w09-q004",
+        "w09-q005",
+        "w09-q006",
+        "w09-q007",
+        "w09-q008",
+        "w09-q009",
+        "w09-q010"
+      ],
+      "topics": []
+    },
+    {
+      "week": 10,
+      "title": "Week 10 : Assignment 10",
+      "due_date": "2026-09-30, 23:59 IST",
+      "questionCount": 10,
+      "questionIds": [
+        "w10-q001",
+        "w10-q002",
+        "w10-q003",
+        "w10-q004",
+        "w10-q005",
+        "w10-q006",
+        "w10-q007",
+        "w10-q008",
+        "w10-q009",
+        "w10-q010"
+      ],
+      "topics": []
+    },
+    {
+      "week": 11,
+      "title": "Week 11 : Assignment 11",
+      "due_date": "2026-10-07, 23:59 IST",
+      "questionCount": 10,
+      "questionIds": [
+        "w11-q001",
+        "w11-q002",
+        "w11-q003",
+        "w11-q004",
+        "w11-q005",
+        "w11-q006",
+        "w11-q007",
+        "w11-q008",
+        "w11-q009",
+        "w11-q010"
+      ],
+      "topics": []
+    },
+    {
+      "week": 12,
+      "title": "Week 12 : Assignment 12",
+      "due_date": "2026-10-14, 23:59 IST",
+      "questionCount": 10,
+      "questionIds": [
+        "w12-q001",
+        "w12-q002",
+        "w12-q003",
+        "w12-q004",
+        "w12-q005",
+        "w12-q006",
+        "w12-q007",
+        "w12-q008",
+        "w12-q009",
+        "w12-q010"
+      ],
+      "topics": []
+    }
+  ]
+}

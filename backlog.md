@@ -15,19 +15,19 @@
   - Acceptance Criteria: All 12 weeks of markdown questions parsed into `questions/week-01.json` through `week-12.json` with 120 validated questions and 0-based option index answers.
   - Output: `scripts/parse_raw.py`, `questions/`, `json/`.
 
-- [ ] **SPRINT-0.2: Next.js + TypeScript + Tailwind Setup**
+- [x] **SPRINT-0.2: Next.js + TypeScript + Tailwind Setup**
   - Acceptance Criteria: Next.js App Router project initialized with strict TypeScript (`tsconfig.json` `strict: true`), Tailwind CSS, Lucide icons, and path aliases (`@/*`).
   - Native Checks: `npm run build` succeeds cleanly.
 
-- [ ] **SPRINT-0.3: Zod Schema Definition & Build-Time Question Validator**
+- [x] **SPRINT-0.3: Zod Schema Definition & Build-Time Question Validator**
   - Acceptance Criteria: Zod schema in `src/lib/schema/question.ts` validating `week`, `title`, `questions` (stable ID `wXX-qYYY`, question text, >=2 options, answer indices within bounds). Script `scripts/validate-questions.ts` runs on `npm run validate:questions` and fails build if invalid.
   - Native Checks: Validation script runs and passes on all 12 week JSON files.
 
-- [ ] **SPRINT-0.4: Question Manifest Generator & Data Pipeline Integration**
+- [x] **SPRINT-0.4: Question Manifest Generator & Data Pipeline Integration**
   - Acceptance Criteria: `scripts/build-index.ts` creates `data/manifest.json` (listing week metadata, question counts, topic breakdowns). Wired into `package.json` `prebuild` hook.
   - Native Checks: `npm run build` triggers prebuild validation and manifest generation.
 
-- [ ] **SPRINT-0.5: Test Framework Bootstrap (Vitest)**
+- [x] **SPRINT-0.5: Test Framework Bootstrap (Vitest)**
   - Acceptance Criteria: Vitest configured with `@testing-library/react` and happy-dom/jsdom. Initial tests verifying question validation logic pass.
   - Native Checks: `npm run test:unit` passes.
 
