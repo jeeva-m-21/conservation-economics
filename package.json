@@ -6,7 +6,7 @@
     "dev": "next dev",
     "prebuild": "npm run validate:questions && npm run build:manifest",
     "build": "next build",
-    "build:cloudflare": "opennextjs-cloudflare build",
+    "build:cloudflare": "opennextjs-cloudflare build && node scripts/patch-cloudflare-worker.mjs",
     "start": "next start",
     "lint": "next lint",
     "type-check": "tsc --noEmit",
