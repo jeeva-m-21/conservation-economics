@@ -20,6 +20,10 @@ playwright-report/
 .env
 .env*.local
 
+# Cloudflare OpenNext
+.open-next/
+.wrangler/
+
 # Logs & OS
 tsconfig.tsbuildinfo
 *.log
