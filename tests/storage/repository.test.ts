@@ -62,6 +62,21 @@ describe("Storage Layer & Backup Engine", () => {
     expect(stats["w01-q001"].bookmarked).toBe(true);
   });
 
+  it("saves question stats in batch atomically without clobbering", async () => {
+    const statsBatch: QuestionStatRecord[] = [
+      { qid: "w01-q001", seen: 1, correct: 1, lastSeen: 1000, box: 2, bookmarked: false },
+      { qid: "w01-q002", seen: 1, correct: 0, lastSeen: 1000, box: 1, bookmarked: false },
+      { qid: "w01-q003", seen: 1, correct: 1, lastSeen: 1000, box: 2, bookmarked: true },
+    ];
+
+    await repo.saveQuestionStatsBatch(statsBatch);
+    const stored = await repo.getQuestionStats();
+    expect(Object.keys(stored).length).toBe(3);
+    expect(stored["w01-q001"].seen).toBe(1);
+    expect(stored["w01-q002"].seen).toBe(1);
+    expect(stored["w01-q003"].seen).toBe(1);
+  });
+
   it("exports progress to valid JSON format", async () => {
     await repo.saveAttempt({
       id: "attempt-export",

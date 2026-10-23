@@ -142,17 +142,20 @@ export function QuestionCard({
             "border-border bg-surface hover:border-ink-muted/60 text-ink";
           let keyBadgeStyle = "bg-raised text-ink-muted border-border";
 
-          if (showFeedback) {
+          if (showFeedback && hasAnswered) {
             if (isAcceptedCorrect) {
               optionStyle =
-                "border-status-correct/60 bg-status-correct-bg text-ink";
+                "border-status-correct bg-status-correct-bg text-ink ring-1 ring-status-correct/30 shadow-xs";
               keyBadgeStyle =
                 "bg-status-correct text-status-correct-contrast font-semibold border-transparent";
             } else if (isSelected && !isAcceptedCorrect) {
               optionStyle =
-                "border-status-wrong/60 bg-status-wrong-bg text-ink";
+                "border-status-wrong bg-status-wrong-bg text-ink ring-1 ring-status-wrong/30 shadow-xs";
               keyBadgeStyle =
                 "bg-status-wrong text-status-wrong-contrast font-semibold border-transparent";
+            } else {
+              optionStyle = "border-border/60 bg-surface/50 text-ink-muted opacity-60";
+              keyBadgeStyle = "bg-raised/60 text-ink-muted/60 border-border/40";
             }
           } else if (isSelected) {
             optionStyle = "border-data bg-data-subtle text-ink shadow-sm";
@@ -186,12 +189,20 @@ export function QuestionCard({
               </div>
 
               {/* Status Indicator Icon */}
-              {showFeedback ? (
+              {showFeedback && hasAnswered ? (
                 isAcceptedCorrect ? (
-                  <CheckCircle2 className="w-4 h-4 text-status-correct shrink-0" />
+                  <div className="flex items-center gap-1.5 text-xs font-semibold text-status-correct shrink-0">
+                    <span className="hidden sm:inline text-[11px] font-mono tracking-wide uppercase">Correct</span>
+                    <CheckCircle2 className="w-4 h-4 text-status-correct shrink-0" />
+                  </div>
                 ) : isSelected ? (
-                  <XCircle className="w-4 h-4 text-status-wrong shrink-0" />
-                ) : null
+                  <div className="flex items-center gap-1.5 text-xs font-semibold text-status-wrong shrink-0">
+                    <span className="hidden sm:inline text-[11px] font-mono tracking-wide uppercase">Your Choice</span>
+                    <XCircle className="w-4 h-4 text-status-wrong shrink-0" />
+                  </div>
+                ) : (
+                  <div className="w-3.5 h-3.5 rounded-full border border-border/40 opacity-40 shrink-0" />
+                )
               ) : (
                 <div
                   className={`w-3.5 h-3.5 rounded-full border transition-all shrink-0 ${
@@ -206,24 +217,26 @@ export function QuestionCard({
         })}
       </div>
 
-      {/* Immediate Learn Mode Feedback Accordion */}
+      {/* Immediate Learn & Practice Mode Feedback Accordion */}
       {showFeedback && hasAnswered && (
         <div
-          className={`mt-6 p-4 rounded-card border text-sm animate-in fade-in duration-150 ${
+          className={`mt-6 p-4 md:p-5 rounded-card border text-sm animate-in fade-in slide-in-from-top-1 duration-150 ${
             isCorrect
-              ? "bg-status-correct-bg/40 border-status-correct/30 text-ink"
-              : "bg-status-wrong-bg/40 border-status-wrong/30 text-ink"
+              ? "bg-status-correct-bg/60 border-status-correct/30 text-ink"
+              : "bg-status-wrong-bg/60 border-status-wrong/30 text-ink"
           }`}
         >
-          <div className="flex items-center gap-2 font-semibold text-xs tracking-tight mb-1">
+          <div className="flex items-center gap-2 font-semibold text-xs tracking-tight mb-1.5">
             <span
-              className={`w-2 h-2 rounded-full ${
+              className={`w-2.5 h-2.5 rounded-full ${
                 isCorrect ? "bg-status-correct" : "bg-status-wrong"
               }`}
             />
-            <span>{isCorrect ? "Correct Solution" : "Incorrect Selection"}</span>
+            <span className="font-mono text-[11px] uppercase tracking-wider">
+              {isCorrect ? "Correct Solution" : "Incorrect Selection"}
+            </span>
           </div>
-          <p className="text-xs text-ink-secondary leading-relaxed mt-1 font-sans">
+          <p className="text-xs md:text-sm text-ink-secondary leading-relaxed mt-1 font-sans">
             {question.explanation ||
               `Accepted answer: ${question.options[question.originalOptionIndices.indexOf(question.answer[0])] || "Option " + (question.answer[0] + 1)}`}
           </p>

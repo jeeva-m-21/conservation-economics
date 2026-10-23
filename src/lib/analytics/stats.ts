@@ -32,9 +32,19 @@ export function computeReadinessScore(
   }
   const avgAccuracy = totalMax > 0 ? (totalScore / totalMax) * 100 : 0;
 
-  // 2. Coverage
-  const seenCount = Object.values(stats).filter((s) => s.seen > 0).length;
-  const coveragePercent = totalCourseQuestions > 0 ? (seenCount / totalCourseQuestions) * 100 : 0;
+  // 2. Coverage (account for both questionStats and question records within attempts)
+  const seenIds = new Set<string>();
+  for (const s of Object.values(stats)) {
+    if (s.seen > 0) seenIds.add(s.qid);
+  }
+  for (const a of attempts) {
+    if (a.answers) {
+      for (const ans of a.answers) {
+        if (ans.qid) seenIds.add(ans.qid);
+      }
+    }
+  }
+  const coveragePercent = totalCourseQuestions > 0 ? (seenIds.size / totalCourseQuestions) * 100 : 0;
 
   // 3. Activity volume
   const activityFactor = Math.min(100, attempts.length * 10);

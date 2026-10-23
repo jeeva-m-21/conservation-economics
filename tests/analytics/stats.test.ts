@@ -52,6 +52,19 @@ describe("Analytics Calculation Engine", () => {
     expect(score).toBeLessThanOrEqual(100);
   });
 
+  it("incorporates questions from attempts into readiness score coverage even if missing from stats", () => {
+    // If stats only has 1 question saved (due to race condition), but attempts has 3 distinct questions
+    const partialStats: Record<string, QuestionStatRecord> = {
+      "w01-q001": { qid: "w01-q001", seen: 1, correct: 1, lastSeen: 1700000000000, box: 2, bookmarked: false },
+    };
+    const scoreWithCoverage = computeReadinessScore(mockAttempts, 10, partialStats);
+    // 3 unique questions across mockAttempts (w01-q001, w01-q002, w02-q001) out of 10 = 30% coverage
+    // Accuracy = (8+5)/(10+10) = 65%
+    // Activity = 2 * 10 = 20
+    // Weighted = 0.5 * 65 + 0.3 * 30 + 0.2 * 20 = 32.5 + 9 + 4 = 45.5 -> 46
+    expect(scoreWithCoverage).toBe(46);
+  });
+
   it("calculates accuracy per week and highlights weakest week", () => {
     const weekStats = computeWeekAccuracies(mockAttempts, 12);
     expect(weekStats.length).toBe(12);

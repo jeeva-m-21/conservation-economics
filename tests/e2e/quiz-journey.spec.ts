@@ -106,4 +106,39 @@ test.describe("NPTEL Quiz Platform End-to-End Journeys", () => {
     await page.reload();
     await expect(checkbox).toBeChecked({ checked: !initialChecked });
   });
+
+  test("5. Practice Mode: clean state before clicking, instant answer reveal right after clicking", async ({
+    page,
+  }) => {
+    await page.goto("/practice");
+
+    // Wait for practice configuration
+    await expect(page.getByText("Practice Configuration")).toBeVisible({ timeout: 10000 });
+
+    // Start practice
+    const startBtn = page.getByRole("button", { name: /Start Practice Session/i });
+    await startBtn.click();
+
+    // Verify question is loaded
+    await expect(page.locator("span.font-mono:has-text('QUESTION 01 OF')")).toBeVisible({ timeout: 10000 });
+
+    // Ensure NO answer is spoiled before clicking (no "Correct Answer" or "Incorrect" labels)
+    await expect(page.locator("text=Correct Solution")).not.toBeVisible();
+    await expect(page.locator("text=Incorrect Selection")).not.toBeVisible();
+    await expect(page.locator("text=Correct Answer")).not.toBeVisible();
+
+    // Now click the first option
+    const firstOption = page.locator('[role="radio"]').first();
+    await firstOption.click();
+
+    // Immediately after clicking, the feedback and solution must be revealed!
+    await expect(
+      page.locator("text=Correct Solution").or(page.locator("text=Incorrect Selection"))
+    ).toBeVisible();
+
+    // A solution explanation should now be visible
+    await expect(
+      page.locator("text=Correct").or(page.locator("text=Your Choice")).first()
+    ).toBeVisible();
+  });
 });

@@ -187,3 +187,14 @@
   - Acceptance Criteria: Add high-contrast `variant="data"` to Button for solid green/teal fill and bold contrast text on module cards in light and dark mode. Convert navbar shortcut trigger to compact 32x32px square button to eliminate viewport overflow. Strip artificial AI/technical boilerplate badges and replace with calm, natural study companion copy.
   - Native Checks: `npm run lint`, `npm run type-check`, `npx playwright test` all pass.
 
+---
+
+## Sprint 8: Practice Mode Instant Feedback & Course Coverage Resiliency
+- [x] **SPRINT-8.1: Instant Answer Reveal Feature in Practice Mode**
+  - Acceptance Criteria: Un-spoiled neutral option display prior to clicking. Instant feedback triggers immediately upon option selection in practice and learn modes, visibly highlighting the correct option, identifying mistakes, revealing detailed explanations, and locking answers against repeated stat increments. Toggleable in setup and active session controls.
+  - Native Checks: Unit tests, Playwright E2E test `5. Practice Mode`, `npm run type-check`, `npm run lint`.
+
+- [x] **SPRINT-8.2: Course Coverage & Atomic Question Stat Batching**
+  - Acceptance Criteria: Eliminate async race conditions in quiz submission with atomic `saveQuestionStatsBatch` and `recordAnswerStatsBatch`. Self-heal existing user profiles by combining both IndexedDB `questionStats` and all recorded `attempts.answers` in `seenQuestionIds` computation and analytics readiness calculations.
+  - Native Checks: `npm run test:unit` (repository batch tests & analytics coverage tests), `npm run build`.
+

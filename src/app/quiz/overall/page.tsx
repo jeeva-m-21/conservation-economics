@@ -47,7 +47,7 @@ export default function OverallExamPage() {
   const { session, startSession, selectOption, toggleFlag, nextQuestion, prevQuestion, jumpToQuestion, finishSession } =
     useQuizStore();
   const { settings, loadSettings } = useSettingsStore();
-  const { saveAttempt, recordAnswerStat, questionStats, toggleBookmark } = useProgressStore();
+  const { saveAttempt, recordAnswerStatsBatch, questionStats, toggleBookmark } = useProgressStore();
 
   useEffect(() => {
     loadSettings();
@@ -120,6 +120,20 @@ export default function OverallExamPage() {
     if (!result || !session) return;
 
     const attemptId = `attempt-overall-${Date.now()}`;
+    const answers = session.questions.map((q) => {
+      const isCorrect =
+        q.userSelected.length === q.answer.length &&
+        q.userSelected.every((idx) => q.answer.includes(idx));
+
+      return {
+        qid: q.id,
+        selected: q.userSelected,
+        correct: isCorrect,
+        timeMs: q.timeSpentMs,
+        flagged: q.flagged,
+      };
+    });
+
     const attemptRecord: AttemptRecord = {
       id: attemptId,
       type: "overall",
@@ -129,24 +143,16 @@ export default function OverallExamPage() {
       maxScore: result.maxScore,
       percentage: result.percentage,
       totalTimeMs: result.totalTimeMs,
-      answers: session.questions.map((q) => {
-        const isCorrect =
-          q.userSelected.length === q.answer.length &&
-          q.userSelected.every((idx) => q.answer.includes(idx));
-
-        recordAnswerStat(q.id, isCorrect);
-
-        return {
-          qid: q.id,
-          selected: q.userSelected,
-          correct: isCorrect,
-          timeMs: q.timeSpentMs,
-          flagged: q.flagged,
-        };
-      }),
+      answers,
     };
 
-    await saveAttempt(attemptRecord);
+    // Atomically persist question stats and attempt record
+    await Promise.all([
+      saveAttempt(attemptRecord),
+      recordAnswerStatsBatch(
+        answers.map((a) => ({ qid: a.qid, isCorrect: a.correct }))
+      ),
+    ]);
     setShowSubmitModal(false);
     router.push(`/review/${attemptId}`);
   };

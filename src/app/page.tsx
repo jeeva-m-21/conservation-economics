@@ -29,10 +29,19 @@ export default function DashboardPage() {
   // Compute metrics from stored attempts
   const totalQuestions = manifestData.totalQuestions;
   const seenQuestionIds = useMemo(() => {
-    return new Set(
-      Object.values(questionStats).filter((s) => s.seen > 0).map((s) => s.qid)
-    );
-  }, [questionStats]);
+    const ids = new Set<string>();
+    for (const stat of Object.values(questionStats)) {
+      if (stat.seen > 0) ids.add(stat.qid);
+    }
+    for (const attempt of attempts) {
+      if (attempt.answers) {
+        for (const ans of attempt.answers) {
+          if (ans.qid) ids.add(ans.qid);
+        }
+      }
+    }
+    return ids;
+  }, [questionStats, attempts]);
 
   const coveragePercent = Math.round((seenQuestionIds.size / totalQuestions) * 100);
 

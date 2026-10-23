@@ -13,6 +13,7 @@ export interface ProgressRepository {
   getAttempts(): Promise<AttemptRecord[]>;
   getAttemptById(id: string): Promise<AttemptRecord | null>;
   saveQuestionStat(stat: QuestionStatRecord): Promise<void>;
+  saveQuestionStatsBatch(stats: QuestionStatRecord[]): Promise<void>;
   getQuestionStats(): Promise<Record<string, QuestionStatRecord>>;
   saveSettings(settings: Settings): Promise<void>;
   getSettings(): Promise<Settings>;
@@ -44,6 +45,11 @@ export function createMemoryRepository(): ProgressRepository {
     },
     async saveQuestionStat(stat: QuestionStatRecord) {
       questionStats[stat.qid] = stat;
+    },
+    async saveQuestionStatsBatch(stats: QuestionStatRecord[]) {
+      for (const stat of stats) {
+        questionStats[stat.qid] = stat;
+      }
     },
     async getQuestionStats() {
       return { ...questionStats };
@@ -121,6 +127,18 @@ export function createIndexedDBRepository(): ProgressRepository {
         await set(STATS_KEY, stats, customStore);
       } catch (e) {
         console.warn("IndexedDB saveQuestionStat failed:", e);
+      }
+    },
+
+    async saveQuestionStatsBatch(newStats: QuestionStatRecord[]) {
+      try {
+        const stats: Record<string, QuestionStatRecord> = (await get(STATS_KEY, customStore)) || {};
+        for (const stat of newStats) {
+          stats[stat.qid] = stat;
+        }
+        await set(STATS_KEY, stats, customStore);
+      } catch (e) {
+        console.warn("IndexedDB saveQuestionStatsBatch failed:", e);
       }
     },
 

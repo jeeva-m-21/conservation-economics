@@ -22,6 +22,7 @@ import {
   ChevronLeft,
   ChevronRight,
   Filter,
+  Sparkles,
 } from "lucide-react";
 
 function PracticeContent() {
@@ -32,6 +33,7 @@ function PracticeContent() {
   const [allQuestions, setAllQuestions] = useState<Question[]>([]);
   const [loading, setLoading] = useState(true);
   const [isPracticing, setIsPracticing] = useState(false);
+  const [instantFeedback, setInstantFeedback] = useState(true);
 
   // Filters
   const [selectedWeek, setSelectedWeek] = useState<number | "all">("all");
@@ -137,6 +139,7 @@ function PracticeContent() {
     const currentQ = session.questions[session.currentIndex];
     const isFirst = session.currentIndex === 0;
     const isLast = session.currentIndex === session.questions.length - 1;
+    const hasAnsweredCurrent = currentQ.userSelected.length > 0;
 
     return (
       <div className="flex-1 flex flex-col bg-ground">
@@ -147,18 +150,47 @@ function PracticeContent() {
           onToggleNavigator={() => {}}
         />
 
-        <div className="flex-1 max-w-4xl mx-auto w-full px-4 py-6 flex flex-col justify-between">
+        {/* Practice Mode Controls Bar */}
+        <div className="max-w-4xl mx-auto w-full px-4 pt-3 flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <Badge variant="neutral" size="sm">
+              Practice Mode
+            </Badge>
+            <span className="text-xs text-ink-muted hidden sm:inline">
+              Self-paced review with instant answer validation
+            </span>
+          </div>
+
+          <button
+            type="button"
+            onClick={() => setInstantFeedback((prev) => !prev)}
+            className={`btn-press inline-flex items-center gap-1.5 px-2.5 py-1 rounded-control text-xs font-mono transition-colors border ${
+              instantFeedback
+                ? "bg-data-subtle text-data border-data/30 font-medium shadow-2xs"
+                : "bg-surface text-ink-muted border-border hover:text-ink"
+            }`}
+            title="Toggle whether the correct answer and solution are displayed immediately after clicking"
+          >
+            <Sparkles className="w-3.5 h-3.5" />
+            <span>Instant Reveal: {instantFeedback ? "ON" : "OFF"}</span>
+          </button>
+        </div>
+
+        <div className="flex-1 max-w-4xl mx-auto w-full px-4 py-4 flex flex-col justify-between">
           <QuestionCard
             question={currentQ}
             currentIndex={session.currentIndex}
             totalQuestions={session.questions.length}
             onSelectOption={(idx) => {
+              // Lock if already answered in instant feedback mode
+              if (instantFeedback && currentQ.userSelected.length > 0) return;
+
               selectOption(currentQ.id, idx);
               const isCorrect = currentQ.answer.includes(idx);
               recordAnswerStat(currentQ.id, isCorrect);
             }}
             onToggleFlag={() => toggleFlag(currentQ.id)}
-            showFeedback={true}
+            showFeedback={instantFeedback}
             isBookmarked={questionStats[currentQ.id]?.bookmarked}
             onToggleBookmark={() => toggleBookmark(currentQ.id)}
           />
@@ -177,20 +209,25 @@ function PracticeContent() {
             <div className="flex items-center gap-2">
               {isLast ? (
                 <Button
-                  variant="primary"
+                  variant="data"
                   size="md"
                   onClick={() => {
                     setIsPracticing(false);
                     resetSession();
                   }}
-                  className="bg-data text-data-contrast font-semibold hover:bg-data/90"
+                  className="font-semibold shadow-xs"
                 >
                   <RotateCcw className="w-3.5 h-3.5" />
                   <span>Done Practicing</span>
                 </Button>
               ) : (
-                <Button variant="primary" size="md" onClick={nextQuestion}>
-                  <span>Next</span>
+                <Button
+                  variant={hasAnsweredCurrent ? "data" : "primary"}
+                  size="md"
+                  onClick={nextQuestion}
+                  className={hasAnsweredCurrent ? "font-semibold shadow-xs" : ""}
+                >
+                  <span>Next Question</span>
                   <ChevronRight className="w-4 h-4" />
                 </Button>
               )}
@@ -285,10 +322,38 @@ function PracticeContent() {
             </div>
           )}
 
+          {/* Instant Answer Reveal Mode Toggle */}
+          <div className="p-4 rounded-card bg-surface border border-border flex items-center justify-between gap-4">
+            <div className="space-y-0.5">
+              <div className="flex items-center gap-2">
+                <span className="text-xs font-semibold text-ink">Instant Answer Reveal</span>
+                <Badge variant="data" size="sm">Active</Badge>
+              </div>
+              <p className="text-xs text-ink-muted">
+                Immediately shows which option is correct, highlights mistakes, and reveals explanations right after clicking your choice.
+              </p>
+            </div>
+            <button
+              type="button"
+              role="switch"
+              aria-checked={instantFeedback}
+              onClick={() => setInstantFeedback(!instantFeedback)}
+              className={`relative inline-flex h-6 w-11 shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus-visible:ring-2 focus-visible:ring-data ${
+                instantFeedback ? "bg-data" : "bg-raised border-border"
+              }`}
+            >
+              <span
+                className={`pointer-events-none inline-block h-5 w-5 transform rounded-full bg-white shadow-sm ring-0 transition duration-200 ease-in-out ${
+                  instantFeedback ? "translate-x-5" : "translate-x-0"
+                }`}
+              />
+            </button>
+          </div>
+
           <Button
-            variant="primary"
+            variant="data"
             size="lg"
-            className="w-full bg-data text-data-contrast font-semibold hover:bg-data/90"
+            className="w-full font-semibold shadow-xs"
             onClick={handleStartPractice}
             disabled={eligibleQuestions.length === 0}
           >
