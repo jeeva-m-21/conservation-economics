@@ -11,7 +11,8 @@ export interface QuestionCardProps {
   totalQuestions: number;
   onSelectOption: (originalIndex: number) => void;
   onToggleFlag: () => void;
-  showFeedback?: boolean; // If true, reveals correct vs wrong (Learn & Review modes)
+  showFeedback?: boolean; // If true, reveals feedback after user answers (Practice mode)
+  revealImmediate?: boolean; // If true, reveals correct answer and explanation immediately at first (Learn mode)
   isBookmarked?: boolean;
   onToggleBookmark?: () => void;
 }
@@ -23,6 +24,7 @@ export function QuestionCard({
   onSelectOption,
   onToggleFlag,
   showFeedback = false,
+  revealImmediate = false,
   isBookmarked = false,
   onToggleBookmark,
 }: QuestionCardProps) {
@@ -61,10 +63,11 @@ export function QuestionCard({
 
   const hasAnswered = question.userSelected.length > 0;
   const isCorrect =
-    showFeedback &&
     hasAnswered &&
     question.userSelected.length === question.answer.length &&
     question.userSelected.every((idx) => question.answer.includes(idx));
+
+  const shouldReveal = (showFeedback && hasAnswered) || revealImmediate;
 
   return (
     <div className="w-full bg-surface rounded-card border border-border p-5 md:p-7 shadow-sm">
@@ -142,7 +145,7 @@ export function QuestionCard({
             "border-border bg-surface hover:border-ink-muted/60 text-ink";
           let keyBadgeStyle = "bg-raised text-ink-muted border-border";
 
-          if (showFeedback && hasAnswered) {
+          if (shouldReveal) {
             if (isAcceptedCorrect) {
               optionStyle =
                 "border-status-correct bg-status-correct-bg text-ink ring-1 ring-status-correct/30 shadow-xs";
@@ -189,7 +192,7 @@ export function QuestionCard({
               </div>
 
               {/* Status Indicator Icon */}
-              {showFeedback && hasAnswered ? (
+              {shouldReveal ? (
                 isAcceptedCorrect ? (
                   <div className="flex items-center gap-1.5 text-xs font-semibold text-status-correct shrink-0">
                     <span className="hidden sm:inline text-[11px] font-mono tracking-wide uppercase">Correct</span>
@@ -218,10 +221,10 @@ export function QuestionCard({
       </div>
 
       {/* Immediate Learn & Practice Mode Feedback Accordion */}
-      {showFeedback && hasAnswered && (
+      {shouldReveal && (
         <div
           className={`mt-6 p-4 md:p-5 rounded-card border text-sm animate-in fade-in slide-in-from-top-1 duration-150 ${
-            isCorrect
+            !hasAnswered || isCorrect
               ? "bg-status-correct-bg/60 border-status-correct/30 text-ink"
               : "bg-status-wrong-bg/60 border-status-wrong/30 text-ink"
           }`}
@@ -229,11 +232,15 @@ export function QuestionCard({
           <div className="flex items-center gap-2 font-semibold text-xs tracking-tight mb-1.5">
             <span
               className={`w-2.5 h-2.5 rounded-full ${
-                isCorrect ? "bg-status-correct" : "bg-status-wrong"
+                !hasAnswered || isCorrect ? "bg-status-correct" : "bg-status-wrong"
               }`}
             />
             <span className="font-mono text-[11px] uppercase tracking-wider">
-              {isCorrect ? "Correct Solution" : "Incorrect Selection"}
+              {!hasAnswered
+                ? "Accepted Solution & Explanation"
+                : isCorrect
+                ? "Correct Solution"
+                : "Incorrect Selection"}
             </span>
           </div>
           <p className="text-xs md:text-sm text-ink-secondary leading-relaxed mt-1 font-sans">

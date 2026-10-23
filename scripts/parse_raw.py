@@ -63,7 +63,7 @@ for week_num in range(1, 13):
                     raw_ans = lines[ans_idx]
                     clean_ans = re.sub(r'Accepted answers?\s*(?:is|are)?\s*:?\s*', '', raw_ans, flags=re.IGNORECASE).strip()
                     for opt_i, opt in enumerate(options):
-                        if opt == clean_ans or raw_ans.endswith(opt):
+                        if opt.strip().lower() == clean_ans.lower():
                             ans_indices.append(opt_i)
                             break
                             

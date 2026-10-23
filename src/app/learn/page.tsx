@@ -160,6 +160,7 @@ function LearnContent() {
           onSelectOption={handleSelect}
           onToggleFlag={() => {}}
           showFeedback={true}
+          revealImmediate={true}
           isBookmarked={questionStats[currentRawQ.id]?.bookmarked}
           onToggleBookmark={() => toggleBookmark(currentRawQ.id)}
         />

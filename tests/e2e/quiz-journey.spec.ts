@@ -53,7 +53,7 @@ test.describe("NPTEL Quiz Platform End-to-End Journeys", () => {
     await expect(page.locator("text=Final Score")).toBeVisible();
   });
 
-  test("2. Learn Mode: reveals instant feedback and explanations", async ({
+  test("2. Learn Mode: reveals answers and explanations immediately at first", async ({
     page,
   }) => {
     await page.goto("/learn?week=1");
@@ -61,12 +61,11 @@ test.describe("NPTEL Quiz Platform End-to-End Journeys", () => {
     // Wait for study material
     await expect(page.getByText("QUESTION 01 OF 10", { exact: true })).toBeVisible({ timeout: 10000 });
 
-    // Select an option
-    const option = page.locator('[role="radio"]').nth(1);
-    await option.click();
-
-    // In learn mode, feedback card appears immediately
-    await expect(page.locator("text=Correct Solution").or(page.locator("text=Incorrect Selection"))).toBeVisible();
+    // In learn mode, the solution and accepted answer are visible immediately at first
+    await expect(
+      page.locator("text=Accepted Solution & Explanation").or(page.locator("text=Correct Solution"))
+    ).toBeVisible();
+    await expect(page.locator("text=Correct").first()).toBeVisible();
   });
 
   test("3. Final Exam Simulator: start, answer, and exit confirmation", async ({
