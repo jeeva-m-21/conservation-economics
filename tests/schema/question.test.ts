@@ -1,5 +1,6 @@
 import { describe, it, expect } from "vitest";
 import { QuestionSchema, WeekQuizSchema } from "@/lib/schema/question";
+import { SettingsSchema } from "@/lib/schema/progress";
 
 describe("Question and Week Quiz Schema Validation", () => {
   it("validates a valid question object", () => {
@@ -103,5 +104,11 @@ describe("Question and Week Quiz Schema Validation", () => {
     };
     const parsed = WeekQuizSchema.safeParse(week0Quiz);
     expect(parsed.success).toBe(true);
+  });
+
+  it("validates SettingsSchema defaults with shuffleQuestions set to true", () => {
+    const settings = SettingsSchema.parse({});
+    expect(settings.shuffleQuestions).toBe(true);
+    expect(settings.shuffleOptions).toBe(true);
   });
 });

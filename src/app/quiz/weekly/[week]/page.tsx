@@ -58,7 +58,7 @@ export default function WeeklyQuizPage({
             type: "weekly",
             week: weekNum,
             questionCount: data.questions.length,
-            shuffleQuestions: false,
+            shuffleQuestions: settings.shuffleQuestions ?? true,
             shuffleOptions: settings.shuffleOptions,
             seed: Date.now(),
             negativeMarking: settings.negativeMarking,
@@ -67,7 +67,7 @@ export default function WeeklyQuizPage({
         );
       }
     });
-  }, [weekNum, loadSettings, settings.defaultTimerMin, settings.negativeMarking, settings.shuffleOptions, startSession]);
+  }, [weekNum, loadSettings, settings.defaultTimerMin, settings.negativeMarking, settings.shuffleQuestions, settings.shuffleOptions, startSession]);
 
   useEffect(() => {
     if (!session) return;

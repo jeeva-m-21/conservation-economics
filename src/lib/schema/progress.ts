@@ -46,6 +46,7 @@ export const SettingsSchema = z.object({
   theme: z.enum(["light", "dark", "system"]).default("light"),
   defaultTimerMin: z.number().int().positive().optional(),
   negativeMarking: z.boolean().default(false),
+  shuffleQuestions: z.boolean().default(true),
   shuffleOptions: z.boolean().default(true),
 });
 

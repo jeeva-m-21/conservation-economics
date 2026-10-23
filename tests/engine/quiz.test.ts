@@ -25,8 +25,26 @@ describe("Pure Quiz Engine", () => {
       answer: [1],
     },
     {
-      id: "w02-q001",
+      id: "w01-q003",
       question: "Question 3?",
+      options: ["Option 1", "Option 2"],
+      answer: [0],
+    },
+    {
+      id: "w01-q004",
+      question: "Question 4?",
+      options: ["Alpha", "Beta"],
+      answer: [1],
+    },
+    {
+      id: "w01-q005",
+      question: "Question 5?",
+      options: ["North", "South"],
+      answer: [0],
+    },
+    {
+      id: "w02-q001",
+      question: "Question 6?",
       options: ["Red", "Green", "Blue", "Yellow"],
       answer: [2],
     },
@@ -73,6 +91,32 @@ describe("Pure Quiz Engine", () => {
       expect(session.questions[0].originalOptionIndices.length).toBe(4);
       // All 0,1,2,3 must be present in the remapped array
       expect(new Set(session.questions[0].originalOptionIndices)).toEqual(new Set([0, 1, 2, 3]));
+    });
+
+    it("shuffles weekly quiz questions when shuffleQuestions is true", () => {
+      const config: QuizConfig = {
+        type: "weekly",
+        week: 1,
+        questionCount: 5,
+        shuffleQuestions: true,
+        shuffleOptions: false,
+        seed: 42,
+        negativeMarking: false,
+      };
+
+      const session = buildQuiz(config, mockQuestions);
+      expect(session.questions.length).toBe(5);
+      const questionIds = session.questions.map((q) => q.id);
+      expect(new Set(questionIds)).toEqual(
+        new Set(["w01-q001", "w01-q002", "w01-q003", "w01-q004", "w01-q005"])
+      );
+      expect(questionIds).not.toEqual([
+        "w01-q001",
+        "w01-q002",
+        "w01-q003",
+        "w01-q004",
+        "w01-q005",
+      ]);
     });
 
     it("samples questions from multiple weeks for overall quiz", () => {

@@ -81,6 +81,7 @@ export default function SettingsPage() {
     await updateSettings({
       theme: "light",
       negativeMarking: false,
+      shuffleQuestions: true,
       shuffleOptions: true,
     });
     setResetModalOpen(false);
@@ -114,6 +115,21 @@ export default function SettingsPage() {
                 type="checkbox"
                 checked={settings.negativeMarking}
                 onChange={(e) => updateSettings({ negativeMarking: e.target.checked })}
+                className="w-4 h-4 rounded text-data focus:ring-data"
+              />
+            </div>
+
+            <div className="border-t border-rule pt-4 flex items-center justify-between">
+              <div>
+                <label className="text-sm font-medium text-ink block">Shuffle Questions</label>
+                <span className="text-xs text-ink-muted block">
+                  Randomizes question order for weekly quizzes and tests so you can be confident.
+                </span>
+              </div>
+              <input
+                type="checkbox"
+                checked={settings.shuffleQuestions}
+                onChange={(e) => updateSettings({ shuffleQuestions: e.target.checked })}
                 className="w-4 h-4 rounded text-data focus:ring-data"
               />
             </div>
